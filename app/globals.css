@@ -462,15 +462,18 @@ summary:focus-visible {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 0.88fr 1.12fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
   margin-top: 1rem;
-  align-items: end;
+  align-items: start;
 }
 
 .coach-card-copy {
   display: grid;
   gap: 0.9rem;
+  min-width: 0;
+  max-width: 26rem;
+  padding-top: 0.35rem;
 }
 
 .coach-kicker {
@@ -483,7 +486,8 @@ summary:focus-visible {
 }
 
 .coach-card-copy h2 {
-  font-size: clamp(2rem, 4vw, 3.4rem);
+  max-width: 10ch;
+  font-size: clamp(2rem, 3.25vw, 3.05rem);
 }
 
 .coach-card-copy p:last-child {
@@ -498,7 +502,10 @@ summary:focus-visible {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  min-height: 460px;
+  width: min(100%, 290px);
+  min-height: 350px;
+  padding: 0.75rem 0.8rem 0;
+  margin: 0.1rem 0 0 auto;
   border-radius: 26px;
   background:
     linear-gradient(180deg, rgba(6, 182, 212, 0.16), rgba(16, 185, 129, 0.2)),
@@ -508,10 +515,10 @@ summary:focus-visible {
 }
 
 .coach-photo {
-  width: min(82%, 360px);
+  width: min(108%, 278px);
   height: auto;
-  max-height: 410px;
-  margin: 0 auto;
+  max-height: 338px;
+  margin: 0 auto -0.1rem;
   object-fit: contain;
   object-position: bottom center;
 }
@@ -909,8 +916,13 @@ summary:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  .coach-card {
-    grid-template-columns: 1fr;
+  .coach-card-copy h2 {
+    max-width: 100%;
+  }
+
+  .coach-photo-frame {
+    max-width: 320px;
+    margin: 0 auto;
   }
 
   .floating-notes,
@@ -952,12 +964,12 @@ summary:focus-visible {
   }
 
   .coach-photo-frame {
-    min-height: 360px;
+    min-height: 320px;
   }
 
   .coach-photo {
-    width: min(78%, 300px);
-    max-height: 320px;
+    width: min(100%, 248px);
+    max-height: 300px;
   }
 }
 
