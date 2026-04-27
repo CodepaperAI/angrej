@@ -1,147 +1,110 @@
 const heroPoints = [
-  "Every batch is taught by Angrej Singh",
-  "Morning and evening batches follow the same plan",
-  "Miss a class and join the alternate batch the same day",
-  "Recordings stay available for revision"
+  "All sessions are conducted exclusively by Angrej Singh",
+  "Morning and evening batches follow the same teaching plan",
+  "Students can join the alternate batch if a session is missed",
+  "Recordings are available for revision and reinforcement"
 ];
 
-const proofCards = [
+const quickOffers = [
   {
-    label: "Format",
-    value: "Live teaching + revision recordings"
+    label: "RN pathway",
+    title: "NCLEX-RN",
+    price: "$ 1200.00",
+    access: "120 Days Access",
+    href: "https://theangrejsinghnclex.com/course-details/nclex-rn",
+    cta: "Buy RN"
   },
   {
-    label: "Audience",
-    value: "RN and RPN aspirants"
-  },
-  {
-    label: "Support",
-    value: "Batch flexibility built in"
+    label: "RPN pathway",
+    title: "NCLEX-PN (RPN)",
+    price: "$ 1200.00",
+    access: "120 Days Access",
+    href: "https://theangrejsinghnclex.com/course-details/nclex-pn-rpn",
+    cta: "Buy RPN"
   }
 ];
 
 const trustCards = [
   {
     number: "01",
-    title: "One teacher leads every live session.",
+    title: "One teacher for every live class.",
     body:
-      "You do not have to adjust to different teaching styles across batches. The guidance stays consistent all the way through.",
-    className: "feature-card large-card"
+      "The current FAQ says morning and evening sessions are conducted exclusively by Angrej Singh, so students do not have to adjust to different teaching styles.",
+    className: "feature-card compact-feature"
   },
   {
     number: "02",
-    title: "Morning and evening stay aligned.",
+    title: "Flexible timing without losing the plan.",
     body:
-      "The syllabus and teaching plan stay the same, so you can choose your timing without worrying about missing content quality.",
-    className: "feature-card"
+      "The live site says both batches follow the same syllabus and teaching plan, which makes the choice about schedule rather than course quality.",
+    className: "feature-card compact-feature"
   },
   {
     number: "03",
-    title: "Missed class does not break your progress.",
+    title: "Support continues if life gets busy.",
     body:
-      "Alternate batch access and recordings help you stay connected to the plan instead of falling behind after one missed session.",
-    className: "feature-card"
-  },
-  {
-    number: "04",
-    title: "RN and RPN paths stay clear from the start.",
-    body:
-      "You can move directly toward the class that matches your goal and reach the support team quickly when you are ready.",
-    className: "feature-card accent-card"
+      "Students can join the alternate batch on the same day if they miss class, and recordings are available for revision and reinforcement.",
+    className: "feature-card compact-feature"
   }
 ];
 
-const steps = [
+const featuredCourses = [
   {
-    step: "Step 1",
-    title: "Choose the batch that fits your routine",
-    body:
-      "Morning and evening follow the same syllabus and teaching plan, so the decision is about schedule, not quality."
+    label: "RN pathway",
+    title: "NCLEX-RN",
+    summary: "Expert-Led NCLEX-RN Training with Practice Tests & Clinical Case Scenarios",
+    price: "$ 1200.00",
+    access: "120 Days Access",
+    href: "https://theangrejsinghnclex.com/course-details/nclex-rn",
+    secondaryHref: "https://theangrejsinghnclex.com/subcategory/courses/RN-CLASSES",
+    primaryCta: "Buy NCLEX-RN",
+    secondaryCta: "View RN classes",
+    className: "offer-card offer-rn"
   },
   {
-    step: "Step 2",
-    title: "Learn directly from Angrej Singh",
-    body:
-      "Every live session keeps the teaching style, pace, and guidance consistent from start to finish."
-  },
-  {
-    step: "Step 3",
-    title: "Use the alternate batch when needed",
-    body:
-      "If you miss your scheduled session, you can join the other batch the same day and stay aligned with the plan."
-  },
-  {
-    step: "Step 4",
-    title: "Revisit recordings for reinforcement",
-    body:
-      "Recordings support revision and recovery, while the live classes stay the center of the learning experience."
-  }
-];
-
-const programs = [
-  {
-    path: "RN path",
-    highlight: "Live coaching",
-    title: "RN classes",
-    description:
-      "For students who want a structured NCLEX RN study system with live teaching, revision support, and a fixed plan.",
-    items: [
-      "Direct teaching by Angrej Singh",
-      "Morning or evening batch selection",
-      "Recordings for concept revision",
-      "Alternate batch support if you miss class"
-    ],
-    href: "https://theangrejsinghnclex.com/subcategory/courses/RN-CLASSES",
-    cta: "View RN classes",
-    className: "program-card program-rn"
-  },
-  {
-    path: "RPN path",
-    highlight: "Same teaching system",
-    title: "RPN classes",
-    description:
-      "For students preparing with the same consistent structure, clear session flow, and revision-first support model.",
-    items: [
-      "Same syllabus logic across batches",
-      "Class recordings included",
-      "Schedule-friendly batch flexibility",
-      "Direct route into the current course page"
-    ],
-    href: "https://theangrejsinghnclex.com/subcategory/courses/RPN-CLASSES",
-    cta: "View RPN classes",
-    className: "program-card program-rpn"
+    label: "RPN pathway",
+    title: "NCLEX-PN (RPN)",
+    summary: "Comprehensive Online RPN Training for International Practical Nurse",
+    price: "$ 1200.00",
+    access: "120 Days Access",
+    href: "https://theangrejsinghnclex.com/course-details/nclex-pn-rpn",
+    secondaryHref: "https://theangrejsinghnclex.com/subcategory/courses/RPN-CLASSES",
+    primaryCta: "Buy NCLEX-PN",
+    secondaryCta: "View RPN classes",
+    className: "offer-card offer-rpn"
   }
 ];
 
 const faqs = [
   {
-    question: "Who teaches the classes?",
+    question: "Who will be teaching the classes?",
     answer:
-      "All sessions are conducted by Angrej Singh, so the teaching quality and guidance stay consistent across batches."
+      "The current FAQ says that all sessions, whether in the morning or evening batch, are conducted exclusively by Angrej Singh."
   },
   {
     question: "What is the difference between the morning and evening batches?",
     answer:
-      "Both batches follow the same syllabus and teaching plan. The only difference is the class timing."
+      "The live site says both morning and evening batches follow the same syllabus and teaching plan, with the only difference being class timing."
   },
   {
-    question: "What happens if I miss my scheduled class?",
+    question: "If I miss my scheduled class, what can I do?",
     answer:
-      "You can join the alternate batch on the same day, which helps you keep pace with the class plan."
+      "Students who miss their scheduled session may join the alternate batch on the same day so they can stay aligned with the syllabus."
   },
   {
-    question: "Are recordings available?",
+    question: "Are recordings of classes available?",
     answer:
-      "Yes. Recordings are available for revision and reinforcement, although live attendance is still encouraged."
+      "Yes. The FAQ says class recordings are provided for revision and reinforcement, though live attendance is still strongly recommended."
   },
   {
     question: "Can I switch between batches permanently?",
     answer:
-      "Students may request a permanent batch transfer based on availability and individual circumstances."
+      "The current website says students may request a permanent transfer between batches, subject to seat availability."
   },
   {
-    question: "Is there a refund policy?",
-    answer: "The current site states that course fees are final and non-refundable."
+    question: "What is the refund policy?",
+    answer:
+      "The current site states that all course fees are final and non-refundable."
   }
 ];
 
@@ -179,15 +142,15 @@ export default function HomePage() {
 
       <div className="announcement-bar" aria-hidden="true">
         <div className="announcement-track">
-          <span>New NCLEX batch open</span>
-          <span>RN and RPN pathways</span>
+          <span>NCLEX-RN listed at $ 1200.00</span>
+          <span>NCLEX-PN (RPN) listed at $ 1200.00</span>
+          <span>120 Days Access on current course pages</span>
           <span>Every live class taught by Angrej Singh</span>
-          <span>Alternate batch support if you miss a session</span>
           <span>Recordings included for revision</span>
-          <span>New NCLEX batch open</span>
-          <span>RN and RPN pathways</span>
+          <span>NCLEX-RN listed at $ 1200.00</span>
+          <span>NCLEX-PN (RPN) listed at $ 1200.00</span>
+          <span>120 Days Access on current course pages</span>
           <span>Every live class taught by Angrej Singh</span>
-          <span>Alternate batch support if you miss a session</span>
           <span>Recordings included for revision</span>
         </div>
       </div>
@@ -207,7 +170,7 @@ export default function HomePage() {
           </a>
 
           <nav className="site-nav" aria-label="Primary">
-            <a href="#programs">Courses</a>
+            <a href="#offers">Pricing</a>
             <a href="#why-it-works">Why it works</a>
             <a href="#faq">FAQ</a>
             <a href="#contact">Contact</a>
@@ -223,20 +186,35 @@ export default function HomePage() {
         <section className="hero-section" id="hero">
           <div className="container hero-grid">
             <div className="hero-copy animate-in">
-              <SectionEyebrow>Angrej Singh learning hub</SectionEyebrow>
-              <h1>Your success starts here with expert guidance for NCLEX.</h1>
+              <SectionEyebrow>Current NCLEX enrollment</SectionEyebrow>
+              <h1>Choose RN or RPN. See the price. Start with confidence.</h1>
               <p className="hero-summary">
-                Live RN and RPN coaching with one consistent teacher, flexible batch
-                support, and recordings that help you revise without losing momentum.
+                The current Angrej Singh website lists two active courses, NCLEX-RN
+                and NCLEX-PN (RPN), each priced at $ 1200.00 with 120 Days Access,
+                plus live teaching, recordings, and batch support.
               </p>
 
               <div className="hero-actions">
-                <a className="button button-accent" href="https://theangrejsinghnclex.com/courses">
-                  Explore Courses
+                <a className="button button-accent" href="#offers">
+                  See Current Offers
                 </a>
                 <a className="button button-ghost" href="https://theangrejsinghnclex.com/contact-us">
-                  Contact Us
+                  Contact Support
                 </a>
+              </div>
+
+              <div className="hero-offer-grid" aria-label="Quick course offers">
+                {quickOffers.map((offer) => (
+                  <article className="hero-offer-card" key={offer.title}>
+                    <span className="hero-offer-label">{offer.label}</span>
+                    <h3>{offer.title}</h3>
+                    <strong>{offer.price}</strong>
+                    <span className="hero-offer-access">{offer.access}</span>
+                    <a className="button button-dark hero-offer-button" href={offer.href}>
+                      {offer.cta}
+                    </a>
+                  </article>
+                ))}
               </div>
 
               <ul className="hero-points" aria-label="Key class benefits">
@@ -244,36 +222,28 @@ export default function HomePage() {
                   <li key={point}>{point}</li>
                 ))}
               </ul>
-
-              <div className="hero-proof">
-                {proofCards.map((card) => (
-                  <div className="proof-card" key={card.label}>
-                    <span className="proof-label">{card.label}</span>
-                    <strong>{card.value}</strong>
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div className="hero-visual animate-in">
               <div className="offer-badge">
-                <span>new batch</span>
-                <strong>Open now</strong>
+                <span>website price</span>
+                <strong>$ 1200</strong>
               </div>
 
               <div className="visual-panel">
                 <div className="visual-meta">
-                  <span className="meta-pill">RN classes</span>
-                  <span className="meta-pill">RPN classes</span>
+                  <span className="meta-pill">NCLEX-RN</span>
+                  <span className="meta-pill">NCLEX-PN (RPN)</span>
                 </div>
 
                 <div className="coach-card">
                   <div className="coach-card-copy">
-                    <p className="coach-kicker">Direct teaching. Clear system.</p>
-                    <h2>One teacher. One plan. Real accountability.</h2>
+                    <p className="coach-kicker">Verified from current course pages.</p>
+                    <h2>Why the current offer feels easier to trust.</h2>
                     <p>
-                      The same teaching approach runs across every batch, so students
-                      get clarity, consistency, and a more reliable path through NCLEX prep.
+                      The current Angrej Singh website makes the offer clearer when
+                      students can quickly understand who teaches, how batches work,
+                      and what support exists after enrollment.
                     </p>
                   </div>
 
@@ -285,22 +255,85 @@ export default function HomePage() {
                     />
                   </div>
                 </div>
-
-                <div className="floating-notes">
-                  <article className="note-card note-yellow">
-                    <span className="note-label">Batch choice</span>
-                    <strong>Morning or evening</strong>
-                  </article>
-                  <article className="note-card note-red">
-                    <span className="note-label">If life gets busy</span>
-                    <strong>Jump into the alternate batch</strong>
-                  </article>
-                  <article className="note-card note-teal">
-                    <span className="note-label">Revision layer</span>
-                    <strong>Replay recordings when needed</strong>
-                  </article>
-                </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="program-section offer-section" id="offers">
+          <div className="container">
+            <div className="section-heading">
+              <SectionEyebrow>Current courses and pricing</SectionEyebrow>
+              <span className="source-note">Verified from the current Angrej Singh website</span>
+              <div className="heading-row">
+                <h2>Choose the course that matches your exam and go straight to the current offer page.</h2>
+                <p>
+                  The current website lists two clear pathways. This section keeps
+                  the current price, access period, and main action visible so the
+                  buying decision feels simple.
+                </p>
+              </div>
+            </div>
+
+            <div className="offer-grid">
+              {featuredCourses.map((course) => (
+                <article className={course.className} key={course.title}>
+                  <div className="offer-card-header">
+                    <div className="offer-copy">
+                      <span className="program-tag">{course.label}</span>
+                      <h3>{course.title}</h3>
+                      <p>{course.summary}</p>
+                    </div>
+
+                    <div className="offer-price-box">
+                      <span className="offer-price-label">Current website price</span>
+                      <strong className="offer-price">{course.price}</strong>
+                      <span className="offer-access">{course.access}</span>
+                    </div>
+                  </div>
+
+                  <div className="offer-actions">
+                    <a className="button button-dark" href={course.href}>
+                      {course.primaryCta}
+                    </a>
+                    <a className="button button-ghost" href={course.secondaryHref}>
+                      {course.secondaryCta}
+                    </a>
+                  </div>
+                </article>
+              ))}
+
+              <aside className="offer-side-panel">
+                <SectionEyebrow>Before you join</SectionEyebrow>
+                <h3>Everything important is already clear on the current site.</h3>
+                <p>
+                  Students usually want to know who teaches, what happens if a
+                  class is missed, whether recordings are included, and what the
+                  refund policy is before they buy.
+                </p>
+
+                <ul className="offer-side-list">
+                  <li>Refund policy: all course fees are final and non-refundable.</li>
+                  <li>Missed session support: students may join the alternate batch on the same day.</li>
+                  <li>Revision support: recordings are provided to enrolled students.</li>
+                </ul>
+
+                <div className="support-actions">
+                  <a className="button button-accent" href="https://theangrejsinghnclex.com/contact-us">
+                    Contact support
+                  </a>
+                  <a className="button button-light" href="https://theangrejsinghnclex.com/student/my-learning">
+                    My Learning
+                  </a>
+                </div>
+
+                <div className="offer-side-links">
+                  <a href="https://theangrejsinghnclex.com/support-ticket-faq">Open support FAQ</a>
+                  <a href="https://theangrejsinghnclex.com/category/courses/NCLEX-CLASSES">
+                    Browse all NCLEX courses
+                  </a>
+                </div>
+              </aside>
             </div>
           </div>
         </section>
@@ -310,11 +343,11 @@ export default function HomePage() {
             <div className="section-heading">
               <SectionEyebrow>Why students trust this format</SectionEyebrow>
               <div className="heading-row">
-                <h2>A clear study system is easier to trust and easier to follow.</h2>
+                <h2>The value is simple: one teacher, one plan, and better continuity.</h2>
                 <p>
-                  You know who teaches, how the batches work, what happens if you
-                  miss class, and how revision support is handled before you even
-                  reach the contact step.
+                  The strongest selling points on the current Angrej Singh site
+                  are consistency, clarity, and revision support. Those are the
+                  points that should help students feel ready to enroll.
                 </p>
               </div>
             </div>
@@ -331,93 +364,14 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="process-section" id="process">
-          <div className="container">
-            <div className="section-heading compact">
-              <SectionEyebrow>How classes work</SectionEyebrow>
-              <h2>A study flow that feels practical, not fragile.</h2>
-            </div>
-
-            <div className="timeline">
-              {steps.map((step) => (
-                <article className="timeline-card" key={step.step}>
-                  <span className="timeline-step">{step.step}</span>
-                  <h3>{step.title}</h3>
-                  <p>{step.body}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="program-section" id="programs">
-          <div className="container">
-            <div className="section-heading">
-              <SectionEyebrow>Programs</SectionEyebrow>
-              <div className="heading-row">
-                <h2>Two clear pathways, one consistent teaching system.</h2>
-                <p>
-                  Each program keeps the same live teaching approach and revision
-                  support, with a direct path into the course page that fits your
-                  exam goal.
-                </p>
-              </div>
-            </div>
-
-            <div className="program-grid">
-              {programs.map((program) => (
-                <article className={program.className} key={program.title}>
-                  <div className="program-topline">
-                    <span className="program-tag">{program.path}</span>
-                    <span className="program-highlight">{program.highlight}</span>
-                  </div>
-                  <h3>{program.title}</h3>
-                  <p>{program.description}</p>
-                  <ul>
-                    {program.items.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                  <a className="button button-dark" href={program.href}>
-                    {program.cta}
-                  </a>
-                </article>
-              ))}
-
-              <aside className="support-panel">
-                <SectionEyebrow>Need help choosing?</SectionEyebrow>
-                <h3>Start with the conversation, not the confusion.</h3>
-                <p>
-                  Students usually need three things before enrolling: the right
-                  program, the right batch, and clarity on how to stay on track.
-                </p>
-
-                <div className="support-actions">
-                  <a className="button button-accent" href="https://theangrejsinghnclex.com/contact-us">
-                    Contact support
-                  </a>
-                  <a className="button button-light" href="https://theangrejsinghnclex.com/student/my-learning">
-                    My Learning
-                  </a>
-                </div>
-
-                <div className="support-links">
-                  <a href="https://theangrejsinghnclex.com/courses">Browse all courses</a>
-                  <a href="https://theangrejsinghnclex.com/contact-us">Open contact page</a>
-                </div>
-              </aside>
-            </div>
-          </div>
-        </section>
-
         <section className="faq-section" id="faq">
           <div className="container faq-grid">
             <div className="faq-intro">
               <SectionEyebrow>FAQ</SectionEyebrow>
               <h2>The questions students usually ask before joining.</h2>
               <p>
-                Clear answers upfront help students decide faster and start with
-                fewer surprises.
+                These answers are aligned to the current Angrej Singh website so
+                the landing page removes friction instead of adding new claims.
               </p>
             </div>
 
@@ -435,20 +389,20 @@ export default function HomePage() {
         <section className="cta-section" id="contact">
           <div className="container cta-panel">
             <div className="cta-copy">
-              <SectionEyebrow>Contact</SectionEyebrow>
-              <h2>Ready to choose your batch and start with a clear plan?</h2>
+              <SectionEyebrow>Next step</SectionEyebrow>
+              <h2>Ready to review the live offer and move into the right course page?</h2>
               <p>
-                Reach out directly to ask about batch fit, course selection, and
-                the best next step for your NCLEX prep.
+                Use the pricing section to pick RN or RPN, then go straight to the
+                current course page or contact support before purchasing.
               </p>
             </div>
 
             <div className="cta-actions">
-              <a className="button button-dark" href="https://theangrejsinghnclex.com/contact-us">
-                Contact Us
+              <a className="button button-dark" href="#offers">
+                See Current Offers
               </a>
-              <a className="button button-light" href="https://theangrejsinghnclex.com/login">
-                Sign In
+              <a className="button button-light" href="https://theangrejsinghnclex.com/contact-us">
+                Contact Us
               </a>
             </div>
 
