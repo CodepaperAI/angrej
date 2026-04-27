@@ -225,11 +225,6 @@ export default function HomePage() {
             </div>
 
             <div className="hero-visual animate-in">
-              <div className="offer-badge">
-                <span>website price</span>
-                <strong>$ 1200</strong>
-              </div>
-
               <div className="visual-panel">
                 <div className="visual-meta">
                   <span className="meta-pill">NCLEX-RN</span>
