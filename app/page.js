@@ -5,22 +5,16 @@ const heroPoints = [
   "Recordings are available for revision and reinforcement"
 ];
 
-const quickOffers = [
+const pathwayLinks = [
   {
     label: "RN pathway",
-    title: "NCLEX-RN",
-    price: "$ 1200.00",
-    access: "120 Days Access",
     href: "https://theangrejsinghnclex.com/course-details/nclex-rn",
-    cta: "Buy RN"
+    cta: "View RN"
   },
   {
     label: "RPN pathway",
-    title: "NCLEX-PN (RPN)",
-    price: "$ 1200.00",
-    access: "120 Days Access",
     href: "https://theangrejsinghnclex.com/course-details/nclex-pn-rpn",
-    cta: "Buy RPN"
+    cta: "View RPN"
   }
 ];
 
@@ -48,30 +42,39 @@ const trustCards = [
   }
 ];
 
-const featuredCourses = [
+const offerHighlights = [
+  "Every live class is taught by Angrej Singh according to the current support FAQ.",
+  "Morning and evening batches follow the same teaching plan, so timing stays flexible without changing the structure.",
+  "Students can join the alternate batch if a class is missed, and recordings are provided for revision.",
+  "The live RN and RPN course pages both currently show $ 1200.00 with 120 Days Access."
+];
+
+const pathwayCards = [
   {
     label: "RN pathway",
     title: "NCLEX-RN",
     summary: "Expert-Led NCLEX-RN Training with Practice Tests & Clinical Case Scenarios",
-    price: "$ 1200.00",
-    access: "120 Days Access",
+    highlights: [
+      "Covers full NCLEX-RN exam content",
+      "3000+ NCLEX-style practice questions",
+      "Personalized coaching and test-taking strategies"
+    ],
     href: "https://theangrejsinghnclex.com/course-details/nclex-rn",
-    secondaryHref: "https://theangrejsinghnclex.com/subcategory/courses/RN-CLASSES",
-    primaryCta: "Buy NCLEX-RN",
-    secondaryCta: "View RN classes",
-    className: "offer-card offer-rn"
+    primaryCta: "Open RN course page",
+    className: "pathway-card pathway-rn"
   },
   {
     label: "RPN pathway",
     title: "NCLEX-PN (RPN)",
     summary: "Comprehensive Online RPN Training for International Practical Nurse",
-    price: "$ 1200.00",
-    access: "120 Days Access",
+    highlights: [
+      "NCLEX-PN syllabus explained in easy language",
+      "Practice tests with rationales",
+      "Time management and clinical reasoning skills"
+    ],
     href: "https://theangrejsinghnclex.com/course-details/nclex-pn-rpn",
-    secondaryHref: "https://theangrejsinghnclex.com/subcategory/courses/RPN-CLASSES",
-    primaryCta: "Buy NCLEX-PN",
-    secondaryCta: "View RPN classes",
-    className: "offer-card offer-rpn"
+    primaryCta: "Open RPN course page",
+    className: "pathway-card pathway-rpn"
   }
 ];
 
@@ -142,15 +145,17 @@ export default function HomePage() {
 
       <div className="announcement-bar" aria-hidden="true">
         <div className="announcement-track">
-          <span>NCLEX-RN listed at $ 1200.00</span>
-          <span>NCLEX-PN (RPN) listed at $ 1200.00</span>
+          <span>One NCLEX coaching system led by Angrej Singh</span>
+          <span>Current website price is $ 1200.00</span>
           <span>120 Days Access on current course pages</span>
           <span>Every live class taught by Angrej Singh</span>
+          <span>Choose RN or RPN pathway after that</span>
           <span>Recordings included for revision</span>
-          <span>NCLEX-RN listed at $ 1200.00</span>
-          <span>NCLEX-PN (RPN) listed at $ 1200.00</span>
+          <span>One NCLEX coaching system led by Angrej Singh</span>
+          <span>Current website price is $ 1200.00</span>
           <span>120 Days Access on current course pages</span>
           <span>Every live class taught by Angrej Singh</span>
+          <span>Choose RN or RPN pathway after that</span>
           <span>Recordings included for revision</span>
         </div>
       </div>
@@ -170,7 +175,7 @@ export default function HomePage() {
           </a>
 
           <nav className="site-nav" aria-label="Primary">
-            <a href="#offers">Pricing</a>
+            <a href="#offers">Offer</a>
             <a href="#why-it-works">Why it works</a>
             <a href="#faq">FAQ</a>
             <a href="#contact">Contact</a>
@@ -187,11 +192,12 @@ export default function HomePage() {
           <div className="container hero-grid">
             <div className="hero-copy animate-in">
               <SectionEyebrow>Current NCLEX enrollment</SectionEyebrow>
-              <h1>Choose RN or RPN. See the price. Start with confidence.</h1>
+              <h1>A simpler path to NCLEX success starts here.</h1>
               <p className="hero-summary">
-                The current Angrej Singh website lists two active courses, NCLEX-RN
-                and NCLEX-PN (RPN), each priced at $ 1200.00 with 120 Days Access,
-                plus live teaching, recordings, and batch support.
+                The current Angrej Singh website presents one coaching format led
+                by Angrej Singh. Students first join the system, then choose the
+                RN or RPN pathway that matches their exam, with the current live
+                offer listed at $ 1200.00 for 120 Days Access.
               </p>
 
               <div className="hero-actions">
@@ -203,19 +209,25 @@ export default function HomePage() {
                 </a>
               </div>
 
-              <div className="hero-offer-grid" aria-label="Quick course offers">
-                {quickOffers.map((offer) => (
-                  <article className="hero-offer-card" key={offer.title}>
-                    <span className="hero-offer-label">{offer.label}</span>
-                    <h3>{offer.title}</h3>
-                    <strong>{offer.price}</strong>
-                    <span className="hero-offer-access">{offer.access}</span>
-                    <a className="button button-dark hero-offer-button" href={offer.href}>
-                      {offer.cta}
+              <article className="hero-service-card" aria-label="Current NCLEX offer">
+                <span className="hero-offer-label">Current live offer</span>
+                <h3>NCLEX coaching by Angrej Singh</h3>
+                <strong className="hero-service-price">$ 1200.00</strong>
+                <span className="hero-offer-access">120 Days Access</span>
+                <p>
+                  One teaching format, one teacher, and two clear pathway
+                  options depending on the exam you plan to take.
+                </p>
+
+                <div className="hero-pathway-row">
+                  {pathwayLinks.map((pathway) => (
+                    <a className="pathway-link" href={pathway.href} key={pathway.label}>
+                      <span>{pathway.label}</span>
+                      <strong>{pathway.cta}</strong>
                     </a>
-                  </article>
-                ))}
-              </div>
+                  ))}
+                </div>
+              </article>
 
               <ul className="hero-points" aria-label="Key class benefits">
                 {heroPoints.map((point) => (
@@ -227,18 +239,19 @@ export default function HomePage() {
             <div className="hero-visual animate-in">
               <div className="visual-panel">
                 <div className="visual-meta">
-                  <span className="meta-pill">NCLEX-RN</span>
-                  <span className="meta-pill">NCLEX-PN (RPN)</span>
+                  <span className="meta-pill">One teacher</span>
+                  <span className="meta-pill">RN or RPN pathway</span>
                 </div>
 
                 <div className="coach-card">
                   <div className="coach-card-copy">
                     <p className="coach-kicker">Verified from current course pages.</p>
-                    <h2>Why the current offer feels easier to trust.</h2>
+                    <h2>One clear offer before the pathway decision.</h2>
                     <p>
-                      The current Angrej Singh website makes the offer clearer when
-                      students can quickly understand who teaches, how batches work,
-                      and what support exists after enrollment.
+                      The strongest message here is clarity. Students are not
+                      being asked to compare multiple services. They are shown
+                      one NCLEX coaching format and then guided to the pathway
+                      that fits their exam.
                     </p>
                   </div>
 
@@ -261,56 +274,66 @@ export default function HomePage() {
               <SectionEyebrow>Current courses and pricing</SectionEyebrow>
               <span className="source-note">Verified from the current Angrej Singh website</span>
               <div className="heading-row">
-                <h2>Choose the course that matches your exam and go straight to the current offer page.</h2>
+                <h2>Lead with one offer, then help the student choose the right route.</h2>
                 <p>
-                  The current website lists two clear pathways. This section keeps
-                  the current price, access period, and main action visible so the
-                  buying decision feels simple.
+                  The current website works best when it is framed as one
+                  coaching service. The pathway choice matters, but it should
+                  come after the student understands the format, price, and
+                  support clearly.
                 </p>
               </div>
             </div>
 
             <div className="offer-grid">
-              {featuredCourses.map((course) => (
-                <article className={course.className} key={course.title}>
-                  <div className="offer-card-header">
-                    <div className="offer-copy">
-                      <span className="program-tag">{course.label}</span>
-                      <h3>{course.title}</h3>
-                      <p>{course.summary}</p>
-                    </div>
-
-                    <div className="offer-price-box">
-                      <span className="offer-price-label">Current website price</span>
-                      <strong className="offer-price">{course.price}</strong>
-                      <span className="offer-access">{course.access}</span>
-                    </div>
+              <article className="offer-main-panel">
+                <div className="offer-main-top">
+                  <div className="offer-main-copy">
+                    <span className="program-tag">Core offer</span>
+                    <h3>Join one NCLEX coaching system with a clear structure.</h3>
+                    <p>
+                      The current live site positions the strongest value in the
+                      teaching format itself: direct instruction by Angrej Singh,
+                      consistent batches, recovery support, and recordings for
+                      revision.
+                    </p>
                   </div>
 
-                  <div className="offer-actions">
-                    <a className="button button-dark" href={course.href}>
-                      {course.primaryCta}
-                    </a>
-                    <a className="button button-ghost" href={course.secondaryHref}>
-                      {course.secondaryCta}
-                    </a>
+                  <div className="offer-price-box">
+                    <span className="offer-price-label">Current website price</span>
+                    <strong className="offer-price">$ 1200.00</strong>
+                    <span className="offer-access">120 Days Access</span>
                   </div>
-                </article>
-              ))}
+                </div>
+
+                <ul className="offer-core-list">
+                  {offerHighlights.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+
+                <div className="offer-actions">
+                  <a className="button button-dark" href="https://theangrejsinghnclex.com/category/courses/NCLEX-CLASSES">
+                    Open current NCLEX offers
+                  </a>
+                  <a className="button button-ghost" href="https://theangrejsinghnclex.com/contact-us">
+                    Talk before you join
+                  </a>
+                </div>
+              </article>
 
               <aside className="offer-side-panel">
-                <SectionEyebrow>Before you join</SectionEyebrow>
-                <h3>Everything important is already clear on the current site.</h3>
+                <SectionEyebrow>Need help choosing?</SectionEyebrow>
+                <h3>Pick the page that matches your exam, not a different service tier.</h3>
                 <p>
-                  Students usually want to know who teaches, what happens if a
-                  class is missed, whether recordings are included, and what the
-                  refund policy is before they buy.
+                  Start with the exam you are preparing for. The teaching format,
+                  listed price, and access period are already aligned across the
+                  current RN and RPN pages.
                 </p>
 
                 <ul className="offer-side-list">
-                  <li>Refund policy: all course fees are final and non-refundable.</li>
-                  <li>Missed session support: students may join the alternate batch on the same day.</li>
-                  <li>Revision support: recordings are provided to enrolled students.</li>
+                  <li>Choose the RN page if your goal is the NCLEX-RN exam.</li>
+                  <li>Choose the RPN page if your goal is the NCLEX-PN (RPN) exam.</li>
+                  <li>If you still have questions, contact support before purchasing.</li>
                 </ul>
 
                 <div className="support-actions">
@@ -329,6 +352,28 @@ export default function HomePage() {
                   </a>
                 </div>
               </aside>
+            </div>
+
+            <div className="pathway-grid">
+              {pathwayCards.map((course) => (
+                <article className={course.className} key={course.title}>
+                  <div className="pathway-card-copy">
+                    <span className="program-tag">{course.label}</span>
+                    <h3>{course.title}</h3>
+                    <p>{course.summary}</p>
+                  </div>
+
+                  <ul className="pathway-points">
+                    {course.highlights.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+
+                  <a className="button button-dark" href={course.href}>
+                    {course.primaryCta}
+                  </a>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -385,10 +430,11 @@ export default function HomePage() {
           <div className="container cta-panel">
             <div className="cta-copy">
               <SectionEyebrow>Next step</SectionEyebrow>
-              <h2>Ready to review the live offer and move into the right course page?</h2>
+              <h2>Ready to review the live offer and open the right pathway?</h2>
               <p>
-                Use the pricing section to pick RN or RPN, then go straight to the
-                current course page or contact support before purchasing.
+                Start from the current offer, then continue to the RN or RPN
+                course page that matches your exam. If you need help first,
+                contact support before purchasing.
               </p>
             </div>
 
