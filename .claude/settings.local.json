@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($pg = \\(Invoke-WebRequest -UseBasicParsing -Uri \"http://localhost:3000/\" -TimeoutSec 60\\).Content; \"Page size: $\\($pg.Length\\)\"; \"Contains Choose your pathway: $\\($pg -match 'Choose your pathway'\\)\"; \"Contains H1 text: $\\($pg -match 'Pass your NCLEX'\\)\")"
+    ]
+  }
+}

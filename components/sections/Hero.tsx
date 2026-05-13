@@ -28,7 +28,14 @@ export function Hero() {
           <div>
             <Badge tone="blue">{site.hero.badge}</Badge>
             <h1 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-ink-900 text-balance">
-              {site.hero.title}
+              <span className="mr-2" aria-label="Canadian flag" role="img">
+                🇨🇦
+              </span>
+              Pass your NCLEX with one teacher who{' '}
+              <span className="bg-brand-yellow/40 box-decoration-clone px-1 rounded-md">
+                actually shows up
+              </span>
+              .
             </h1>
             <p className="mt-5 text-base md:text-lg text-ink-700 leading-relaxed max-w-xl">
               {site.hero.subtitle}
@@ -43,15 +50,23 @@ export function Hero() {
               </Button>
             </div>
 
-            <ul className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <ul className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-2.5">
               {trustItems.map((item) => (
-                <li key={item} className="flex items-start gap-2 text-sm font-medium text-ink-700">
-                  <Check
-                    size={18}
-                    className="shrink-0 mt-0.5 text-brand-blue"
-                    aria-hidden="true"
-                  />
-                  <span>{item}</span>
+                <li
+                  key={item}
+                  className="flex items-center gap-2 rounded-full bg-brand-blue-soft border border-brand-blue/15 shadow-card px-3 py-2.5 sm:px-4"
+                >
+                  <span className="flex items-center justify-center shrink-0 w-5 h-5 rounded-full bg-brand-blue">
+                    <Check
+                      size={12}
+                      strokeWidth={3}
+                      className="text-white"
+                      aria-hidden="true"
+                    />
+                  </span>
+                  <span className="text-xs sm:text-sm font-semibold text-ink-900 leading-tight">
+                    {item}
+                  </span>
                 </li>
               ))}
             </ul>
