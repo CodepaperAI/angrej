@@ -37,7 +37,7 @@ export function Instructor() {
     <section className="bg-gradient-to-r from-brand-blue to-brand-blue-dark py-20 text-white md:py-28">
       <Container>
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}

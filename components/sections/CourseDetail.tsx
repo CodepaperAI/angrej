@@ -43,7 +43,7 @@ export function CourseDetail({ course }: { course: Course }) {
       >
         <Container>
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="grid items-center gap-12 md:grid-cols-2"
@@ -103,7 +103,7 @@ export function CourseDetail({ course }: { course: Course }) {
       <section className="bg-white py-16 md:py-24">
         <Container>
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -141,7 +141,7 @@ export function CourseDetail({ course }: { course: Course }) {
       <section className="bg-bg-soft py-16 md:py-24">
         <Container>
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -178,7 +178,7 @@ export function CourseDetail({ course }: { course: Course }) {
       <section className="bg-white py-16 md:py-24">
         <Container>
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}

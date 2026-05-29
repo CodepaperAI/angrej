@@ -14,26 +14,17 @@ export function Testimonials() {
     <section className="overflow-hidden bg-gradient-to-b from-white via-brand-blue-soft/35 to-white py-16 md:py-24">
       <Container>
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           <SectionHeader
-            eyebrow="Student reviews"
-            title="A moving wall of real student feedback."
-            subtitle="All 50 reviews below were extracted from the PDF you provided, then styled into an auto-scrolling proof section that fits the Angrej Singh theme."
+            eyebrow="Student success stories"
+            title="What students say about Angrej Singh NCLEX"
+            subtitle="Real feedback from learners who chose live coaching, clear explanations, and steady support for their NCLEX preparation."
             align="center"
           />
-
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <div className="rounded-full border border-brand-blue/15 bg-white px-4 py-2 text-sm font-semibold text-ink-900 shadow-card">
-              50 student reviews
-            </div>
-            <div className="rounded-full border border-brand-yellow/30 bg-brand-yellow-soft px-4 py-2 text-sm font-semibold text-ink-900 shadow-card">
-              Added from the review PDF shared on May 29, 2026
-            </div>
-          </div>
         </motion.div>
       </Container>
 

@@ -68,7 +68,6 @@ function initialsFromName(name: string) {
     .toUpperCase();
 }
 
-// Extracted from the PDF provided on May 29, 2026
 export const testimonials: Testimonial[] = testimonialRows.map(
   ([name, result, quote], index) => ({
     id: `t${String(index + 1).padStart(3, '0')}`,

@@ -20,34 +20,19 @@ export function Hero() {
     <section className="relative overflow-hidden bg-gradient-to-br from-brand-blue-soft via-white to-brand-yellow-soft pt-12 pb-16 md:pt-20 md:pb-24">
       <Container>
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="grid items-center gap-12 md:grid-cols-2"
         >
-          <div>
+          <div className="min-w-0">
             <Badge tone="blue">{site.hero.badge}</Badge>
 
-            <div className="mt-5 flex items-start gap-3">
-              <span
-                aria-hidden="true"
-                className="inline-flex shrink-0 overflow-hidden rounded-xl border border-ink-100 bg-white shadow-card"
-              >
-                <Image
-                  src="/canada-flag.svg"
-                  alt=""
-                  width={40}
-                  height={28}
-                  className="h-7 w-10 object-cover"
-                />
-              </span>
+            <h1 className="mt-5 min-w-0 break-words text-3xl font-extrabold leading-[1.1] tracking-tight text-ink-900 sm:text-4xl md:text-balance md:text-5xl lg:text-6xl">
+              {site.hero.title}
+            </h1>
 
-              <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-ink-900 text-balance md:text-5xl lg:text-6xl">
-                {site.hero.title}
-              </h1>
-            </div>
-
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-700 md:text-lg">
+            <p className="mt-5 max-w-xl break-words text-base leading-relaxed text-ink-700 md:text-lg">
               {site.hero.subtitle}
             </p>
 
@@ -60,11 +45,11 @@ export function Hero() {
               </Button>
             </div>
 
-            <ul className="mt-8 grid grid-cols-2 gap-2.5 sm:grid-cols-4">
+            <ul className="mt-8 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
               {trustItems.map((item) => (
                 <li
                   key={item}
-                  className="flex items-center gap-2 rounded-full border border-brand-blue/15 bg-brand-blue-soft px-3 py-2.5 shadow-card sm:px-4"
+                  className="flex min-w-0 items-center gap-2 rounded-full border border-brand-blue/15 bg-brand-blue-soft px-3 py-2.5 shadow-card sm:px-4"
                 >
                   <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-blue">
                     <Check
@@ -74,7 +59,7 @@ export function Hero() {
                       aria-hidden="true"
                     />
                   </span>
-                  <span className="text-xs font-semibold leading-tight text-ink-900 sm:text-sm">
+                  <span className="min-w-0 break-words text-xs font-semibold leading-tight text-ink-900 sm:text-sm">
                     {item}
                   </span>
                 </li>
