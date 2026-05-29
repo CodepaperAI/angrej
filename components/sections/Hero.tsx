@@ -17,27 +17,37 @@ const trustItems = [
 
 export function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-brand-blue-soft via-white to-brand-yellow-soft pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden">
+    <section className="relative overflow-hidden bg-gradient-to-br from-brand-blue-soft via-white to-brand-yellow-soft pt-12 pb-16 md:pt-20 md:pb-24">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="grid md:grid-cols-2 gap-12 items-center"
+          className="grid items-center gap-12 md:grid-cols-2"
         >
           <div>
             <Badge tone="blue">{site.hero.badge}</Badge>
-            <h1 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-ink-900 text-balance">
-              <span className="mr-2" aria-label="Canadian flag" role="img">
-                🇨🇦
+
+            <div className="mt-5 flex items-start gap-3">
+              <span
+                aria-hidden="true"
+                className="inline-flex shrink-0 overflow-hidden rounded-xl border border-ink-100 bg-white shadow-card"
+              >
+                <Image
+                  src="/canada-flag.svg"
+                  alt=""
+                  width={40}
+                  height={28}
+                  className="h-7 w-10 object-cover"
+                />
               </span>
-              Pass your NCLEX with one teacher who{' '}
-              <span className="bg-brand-yellow/40 box-decoration-clone px-1 rounded-md">
-                actually shows up
-              </span>
-              .
-            </h1>
-            <p className="mt-5 text-base md:text-lg text-ink-700 leading-relaxed max-w-xl">
+
+              <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-ink-900 text-balance md:text-5xl lg:text-6xl">
+                {site.hero.title}
+              </h1>
+            </div>
+
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-700 md:text-lg">
               {site.hero.subtitle}
             </p>
 
@@ -50,13 +60,13 @@ export function Hero() {
               </Button>
             </div>
 
-            <ul className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+            <ul className="mt-8 grid grid-cols-2 gap-2.5 sm:grid-cols-4">
               {trustItems.map((item) => (
                 <li
                   key={item}
-                  className="flex items-center gap-2 rounded-full bg-brand-blue-soft border border-brand-blue/15 shadow-card px-3 py-2.5 sm:px-4"
+                  className="flex items-center gap-2 rounded-full border border-brand-blue/15 bg-brand-blue-soft px-3 py-2.5 shadow-card sm:px-4"
                 >
-                  <span className="flex items-center justify-center shrink-0 w-5 h-5 rounded-full bg-brand-blue">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-blue">
                     <Check
                       size={12}
                       strokeWidth={3}
@@ -64,7 +74,7 @@ export function Hero() {
                       aria-hidden="true"
                     />
                   </span>
-                  <span className="text-xs sm:text-sm font-semibold text-ink-900 leading-tight">
+                  <span className="text-xs font-semibold leading-tight text-ink-900 sm:text-sm">
                     {item}
                   </span>
                 </li>
@@ -75,37 +85,37 @@ export function Hero() {
           <div className="relative">
             <div
               aria-hidden="true"
-              className="absolute -bottom-6 -left-6 w-40 h-40 rounded-3xl bg-brand-yellow-soft hidden md:block"
+              className="absolute -bottom-6 -left-6 hidden h-40 w-40 rounded-3xl bg-brand-yellow-soft md:block"
             />
             <div
               aria-hidden="true"
-              className="absolute -top-6 -right-6 w-32 h-32 rounded-full bg-brand-blue-soft hidden md:block"
+              className="absolute -top-6 -right-6 hidden h-32 w-32 rounded-full bg-brand-blue-soft md:block"
             />
-            <div className="relative rounded-3xl bg-white shadow-card border border-ink-100 overflow-hidden">
+            <div className="relative overflow-hidden rounded-3xl border border-ink-100 bg-white shadow-card">
               <Image
-                src="/instructor.jpg"
-                alt="Angrej Singh — NCLEX coach"
+                src="/angrej-portrait.png"
+                alt="Angrej Singh, NCLEX coach"
                 width={680}
                 height={680}
                 priority
-                className="w-full h-auto object-cover aspect-[5/6]"
+                className="aspect-[5/6] h-auto w-full object-contain bg-gradient-to-b from-brand-blue-soft/50 to-white px-4 pt-6"
               />
 
-              <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl border border-ink-100 shadow-card px-5 py-4 flex items-start gap-3">
+              <div className="absolute right-4 bottom-4 left-4 flex items-start gap-3 rounded-2xl border border-ink-100 bg-white/95 px-5 py-4 shadow-card backdrop-blur-md">
                 <Quote
                   size={22}
-                  className="shrink-0 text-brand-yellow fill-brand-yellow mt-0.5"
+                  className="mt-0.5 shrink-0 fill-brand-yellow text-brand-yellow"
                   aria-hidden="true"
                 />
                 <figure>
-                  <blockquote className="text-sm md:text-base font-semibold italic text-ink-900 leading-snug">
+                  <blockquote className="text-sm font-semibold italic leading-snug text-ink-900 md:text-base">
                     &ldquo;{site.instructorQuote.text}&rdquo;
                   </blockquote>
                   <figcaption className="mt-2 text-xs">
                     <span className="font-bold text-ink-900">
                       {site.instructorQuote.attribution}
                     </span>
-                    <span className="text-ink-500"> · {site.instructorQuote.role}</span>
+                    <span className="text-ink-500"> | {site.instructorQuote.role}</span>
                   </figcaption>
                 </figure>
               </div>

@@ -5,6 +5,8 @@ export type Course = {
   badgeLabel: string;
   badgeTone: 'blue' | 'yellow' | 'neutral';
   accent: 'blue' | 'yellow';
+  thumbnailSrc: string;
+  thumbnailAlt: string;
   title: string;
   shortTitle?: string;
   oneLiner: string;
@@ -27,6 +29,8 @@ export const courses: Record<CourseSlug, Course> = {
     badgeLabel: 'RN Pathway',
     badgeTone: 'blue',
     accent: 'blue',
+    thumbnailSrc: '/course-rn.jpg',
+    thumbnailAlt: 'RN NCLEX complete course thumbnail',
     title: 'NCLEX-RN',
     oneLiner:
       'Expert-led training for the NCLEX-RN exam, with practice tests and clinical case scenarios.',
@@ -40,7 +44,7 @@ export const courses: Record<CourseSlug, Course> = {
     features: [
       {
         title: 'Live classes by Angrej Singh',
-        body: 'Every session is taught by Angrej Singh — no rotating instructors.',
+        body: 'Every session is taught by Angrej Singh, with no rotating instructors.',
       },
       {
         title: 'Morning + Evening batches',
@@ -87,9 +91,9 @@ export const courses: Record<CourseSlug, Course> = {
     ],
     detailHero: {
       eyebrow: 'RN Pathway',
-      title: 'NCLEX-RN — Live coaching for the registered nurse exam.',
+      title: 'NCLEX-RN live coaching for the registered nurse exam.',
       intro:
-        'Live NCLEX-RN classes with Angrej Singh, morning or evening batch, recordings included, plus 3000+ practice questions and clinical case scenarios — all under one $1200 / 120-day enrollment.',
+        'Live NCLEX-RN classes with Angrej Singh, morning or evening batch, recordings included, plus 3000+ practice questions and clinical case scenarios, all under one $1200 / 120-day enrollment.',
     },
     enrollCta: 'Enroll in RN',
   },
@@ -98,6 +102,8 @@ export const courses: Record<CourseSlug, Course> = {
     badgeLabel: 'RPN Pathway',
     badgeTone: 'yellow',
     accent: 'yellow',
+    thumbnailSrc: '/course-rpn.jpg',
+    thumbnailAlt: 'RPN NCLEX complete course thumbnail',
     title: 'NCLEX-PN (RPN)',
     oneLiner:
       'Comprehensive online RPN training for international practical nurses entering Canadian practice.',
@@ -111,7 +117,7 @@ export const courses: Record<CourseSlug, Course> = {
     features: [
       {
         title: 'Live classes by Angrej Singh',
-        body: 'Every session is taught by Angrej Singh — same teacher in every batch.',
+        body: 'Every session is taught by Angrej Singh, with the same teacher in every batch.',
       },
       {
         title: 'Morning + Evening batches',
@@ -119,7 +125,7 @@ export const courses: Record<CourseSlug, Course> = {
       },
       {
         title: 'Recordings for revision',
-        body: 'Recordings available for catch-up and reinforcement throughout your term.',
+        body: 'Recordings are available for catch-up and reinforcement throughout your term.',
       },
       {
         title: 'NCLEX-PN practice tests',
@@ -158,36 +164,36 @@ export const courses: Record<CourseSlug, Course> = {
     ],
     detailHero: {
       eyebrow: 'RPN Pathway',
-      title: 'NCLEX-PN (RPN) — Live coaching for international practical nurses.',
+      title: 'NCLEX-PN (RPN) live coaching for international practical nurses.',
       intro:
-        'Live NCLEX-PN classes with Angrej Singh, morning or evening batch, recordings included, with practice tests and clinical reasoning practice — all under one $1200 / 120-day enrollment.',
+        'Live NCLEX-PN classes with Angrej Singh, morning or evening batch, recordings included, with practice tests and clinical reasoning practice, all under one $1200 / 120-day enrollment.',
     },
     enrollCta: 'Enroll in RPN',
   },
-  // TODO: Vinay — confirm bullets, features, curriculum, and access period for Human Psychology.
-  // Pricing ($499) confirmed from live site screenshot. Access period not visible there — using "Self-paced access" as placeholder.
+  // TODO: Vinay - confirm bullets, features, curriculum, and access period for Human Psychology.
+  // Pricing ($499) confirmed from the live site screenshot. Access period was not visible there, so "Self-paced access" is still a placeholder.
   psychology: {
     slug: 'psychology',
     badgeLabel: 'Bonus course',
     badgeTone: 'neutral',
     accent: 'blue',
-    title: 'Human Psychology — Master Human Behavior',
+    thumbnailSrc: '/course-psychology.jpg',
+    thumbnailAlt: 'Human Psychology course thumbnail',
+    title: 'Human Psychology: Master Human Behavior',
     shortTitle: 'Human Psychology',
     oneLiner:
-      'A self-development course on understanding human behavior — useful for nurses, students, and anyone learning to read people better.',
+      'A self-development course on understanding human behavior, useful for nurses, students, and anyone learning to read people better.',
     priceDisplay: '$499',
     accessLabel: 'Self-paced access',
     bullets: [
-      // TODO: Vinay to refine bullets
       'Foundations of human behavior and motivation',
       'Practical communication and emotional skills',
       'Apply psychology in clinical and everyday settings',
     ],
     features: [
-      // TODO: Vinay to refine — placeholder structure to mirror NCLEX courses
       {
         title: 'Taught by Angrej Singh',
-        body: 'Same instructor as the NCLEX program — explained in clear, practical terms.',
+        body: 'Same instructor as the NCLEX program, explained in clear, practical terms.',
       },
       {
         title: 'Self-paced format',
@@ -199,7 +205,7 @@ export const courses: Record<CourseSlug, Course> = {
       },
       {
         title: 'Beginner-friendly',
-        body: 'No prior psychology background required — built for nurses and learners.',
+        body: 'No prior psychology background required, built for nurses and learners.',
       },
       {
         title: 'Reflection prompts',
@@ -207,11 +213,10 @@ export const courses: Record<CourseSlug, Course> = {
       },
       {
         title: 'Lifetime applicability',
-        body: 'Skills useful long after the course ends — at work and in life.',
+        body: 'Skills useful long after the course ends, at work and in life.',
       },
     ],
     curriculum: [
-      // TODO: Vinay to refine curriculum topics
       {
         topic: 'Foundations of human behavior',
         description:
@@ -220,7 +225,7 @@ export const courses: Record<CourseSlug, Course> = {
       {
         topic: 'Communication and influence',
         description:
-          'Listening, framing, and difficult conversations — practical tools.',
+          'Listening, framing, and difficult conversations, with practical tools.',
       },
       {
         topic: 'Self-development',
@@ -235,9 +240,9 @@ export const courses: Record<CourseSlug, Course> = {
     ],
     detailHero: {
       eyebrow: 'Bonus course',
-      title: 'Human Psychology — Master Human Behavior.',
+      title: 'Human Psychology: Master Human Behavior.',
       intro:
-        'A self-paced course on understanding people — motivations, communication, and behavior. Designed for nurses and learners who want to be better at reading and working with people.',
+        'A self-paced course on understanding people, motivations, communication, and behavior. Designed for nurses and learners who want to be better at reading and working with people.',
     },
     enrollCta: 'Enroll in Psychology',
   },

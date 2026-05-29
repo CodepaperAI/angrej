@@ -7,12 +7,12 @@ import { courses } from '@/content/courses';
 export const metadata: Metadata = {
   title: 'NCLEX-PN (RPN) coaching | Angrej Singh NCLEX',
   description:
-    'Live NCLEX-PN (RPN) coaching by Angrej Singh — morning and evening batches, recordings included, practice tests with rationales. $1200 / 120 days.',
+    'Live NCLEX-PN (RPN) coaching by Angrej Singh, with morning and evening batches, recordings included, and practice tests with rationales. $1200 / 120 days.',
   alternates: { canonical: '/rpn' },
   openGraph: {
     title: 'NCLEX-PN (RPN) coaching | Angrej Singh NCLEX',
     description:
-      'Live NCLEX-PN coaching with Angrej Singh — same teacher every class.',
+      'Live NCLEX-PN coaching with Angrej Singh, same teacher every class.',
     url: '/rpn',
     type: 'website',
   },

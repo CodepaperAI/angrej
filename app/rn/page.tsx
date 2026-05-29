@@ -7,12 +7,12 @@ import { courses } from '@/content/courses';
 export const metadata: Metadata = {
   title: 'NCLEX-RN coaching | Angrej Singh NCLEX',
   description:
-    'Live NCLEX-RN coaching by Angrej Singh — morning and evening batches, recordings included, 3000+ practice questions. $1200 / 120 days.',
+    'Live NCLEX-RN coaching by Angrej Singh, with morning and evening batches, recordings included, and 3000+ practice questions. $1200 / 120 days.',
   alternates: { canonical: '/rn' },
   openGraph: {
     title: 'NCLEX-RN coaching | Angrej Singh NCLEX',
     description:
-      'Live NCLEX-RN coaching with Angrej Singh — same teacher every class.',
+      'Live NCLEX-RN coaching with Angrej Singh, same teacher every class.',
     url: '/rn',
     type: 'website',
   },

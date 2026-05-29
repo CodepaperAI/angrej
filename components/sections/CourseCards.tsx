@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
@@ -24,35 +25,66 @@ export function CourseCards() {
           <SectionHeader
             eyebrow="Choose your pathway"
             title="Three pathways. Same teacher."
-            subtitle="Start with the exam you're preparing for, or pick up the bonus Human Psychology course alongside it."
+            subtitle="Now each course is previewed with its own branded thumbnail, so the offer feels closer to the real Angrej Singh sales material."
             align="center"
           />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {cards.map((course) => (
               <article
                 key={course.slug}
-                className="bg-white rounded-3xl shadow-card hover:shadow-card-hover transition-shadow border border-ink-100 overflow-hidden flex flex-col"
+                className="group flex flex-col overflow-hidden rounded-[30px] border border-ink-100 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
               >
-                <div
-                  className={`h-2 ${
-                    course.accent === 'blue' ? 'bg-brand-blue' : 'bg-brand-yellow'
-                  }`}
-                />
-                <div className="p-8 flex flex-col gap-5 flex-1">
-                  <Badge tone={course.badgeTone}>{course.badgeLabel}</Badge>
-                  <h3 className="text-xl md:text-2xl font-bold text-ink-900">
-                    {course.title}
-                  </h3>
-                  <p className="text-ink-700 leading-relaxed">{course.oneLiner}</p>
+                <div className="p-4 pb-0">
+                  <div
+                    className={`overflow-hidden rounded-[26px] border border-ink-100 ${
+                      course.accent === 'blue'
+                        ? 'bg-gradient-to-br from-brand-blue-soft via-white to-white'
+                        : 'bg-gradient-to-br from-brand-yellow-soft via-white to-white'
+                    }`}
+                  >
+                    <div
+                      className={`h-1.5 ${
+                        course.accent === 'blue' ? 'bg-brand-blue' : 'bg-brand-yellow'
+                      }`}
+                    />
+                    <div className="relative aspect-[16/9] overflow-hidden">
+                      <Image
+                        src={course.thumbnailSrc}
+                        alt={course.thumbnailAlt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-contain p-2.5 transition-transform duration-500 group-hover:scale-[1.02]"
+                      />
+                    </div>
+                    <div className="flex items-center justify-between gap-3 border-t border-ink-100/80 bg-white/88 px-4 py-3 backdrop-blur">
+                      <span className="text-lg font-extrabold tracking-tight text-ink-900">
+                        {course.priceDisplay}
+                      </span>
+                      <span className="rounded-full bg-bg-soft px-3 py-1 text-xs font-semibold text-ink-700">
+                        {course.accessLabel}
+                      </span>
+                    </div>
+                  </div>
+                </div>
 
-                  <div className="flex items-baseline gap-3">
-                    <span className="text-4xl font-extrabold text-ink-900">
-                      {course.priceDisplay}
-                    </span>
-                    <span className="text-sm font-semibold text-ink-500">
-                      {course.accessLabel}
-                    </span>
+                <div className="flex flex-1 flex-col gap-5 p-8">
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <Badge tone={course.badgeTone}>{course.badgeLabel}</Badge>
+                    {course.slug !== 'psychology' && (
+                      <span className="rounded-full bg-brand-blue-soft px-3 py-1 text-xs font-semibold text-brand-blue-dark">
+                        Live + recorded
+                      </span>
+                    )}
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-bold text-ink-900 md:text-2xl">
+                      {course.title}
+                    </h3>
+                    <p className="mt-3 leading-relaxed text-ink-700">
+                      {course.oneLiner}
+                    </p>
                   </div>
 
                   <ul className="space-y-2.5">
@@ -60,7 +92,7 @@ export function CourseCards() {
                       <li key={bullet} className="flex items-start gap-2.5 text-ink-700">
                         <Check
                           size={18}
-                          className="shrink-0 mt-1 text-brand-blue"
+                          className="mt-1 shrink-0 text-brand-blue"
                           aria-hidden="true"
                         />
                         <span>{bullet}</span>
@@ -75,7 +107,7 @@ export function CourseCards() {
                     </div>
                   )}
 
-                  <div className="mt-auto pt-4 flex flex-wrap items-center gap-3">
+                  <div className="mt-auto flex flex-wrap items-center gap-3 pt-2">
                     <Button
                       href={`/contact?course=${course.slug}`}
                       variant="primary"
@@ -84,7 +116,7 @@ export function CourseCards() {
                       {course.enrollCta}
                     </Button>
                     <Button href={`/${course.slug}`} variant="ghost" size="md">
-                      View details →
+                      View details
                     </Button>
                   </div>
                 </div>
@@ -96,9 +128,9 @@ export function CourseCards() {
             Not sure which pathway?{' '}
             <Link
               href="/contact"
-              className="text-brand-blue font-semibold hover:underline"
+              className="font-semibold text-brand-blue hover:underline"
             >
-              Talk to us before enrolling →
+              Talk to us before enrolling
             </Link>
           </p>
         </motion.div>

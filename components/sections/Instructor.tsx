@@ -13,36 +13,48 @@ const TikTokIcon = ({ size = 18 }: { size?: number }) => (
   </svg>
 );
 
-// TODO: Vinay — verify follower counts against live socials and update before launch
+// TODO: Vinay - verify follower counts against live socials and update before launch
 const proofChips = [
-  { icon: <Instagram size={16} aria-hidden="true" />, label: '15K followers', href: site.brand.socials.instagram },
-  { icon: <Youtube size={16} aria-hidden="true" />, label: '5K subscribers', href: site.brand.socials.youtube },
-  { icon: <TikTokIcon size={14} />, label: '10K followers', href: site.brand.socials.tiktok },
+  {
+    icon: <Instagram size={16} aria-hidden="true" />,
+    label: '15K followers',
+    href: site.brand.socials.instagram,
+  },
+  {
+    icon: <Youtube size={16} aria-hidden="true" />,
+    label: '5K subscribers',
+    href: site.brand.socials.youtube,
+  },
+  {
+    icon: <TikTokIcon size={14} />,
+    label: '10K followers',
+    href: site.brand.socials.tiktok,
+  },
 ];
 
 export function Instructor() {
   return (
-    <section className="bg-gradient-to-r from-brand-blue to-brand-blue-dark text-white py-20 md:py-28">
+    <section className="bg-gradient-to-r from-brand-blue to-brand-blue-dark py-20 text-white md:py-28">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="grid md:grid-cols-[2fr_3fr] gap-12 items-center"
+          className="grid items-center gap-12 md:grid-cols-[2fr_3fr]"
         >
           <div className="relative">
             <div
               aria-hidden="true"
-              className="absolute -top-4 -left-4 w-32 h-32 rounded-2xl bg-brand-yellow rotate-12 opacity-90"
+              className="absolute -top-4 -left-4 h-32 w-32 rotate-12 rounded-2xl bg-brand-yellow opacity-90"
             />
-            <div className="relative rounded-3xl overflow-hidden border-4 border-white/10 shadow-card">
+            <div className="relative overflow-hidden rounded-3xl border-4 border-white/10 shadow-card">
               <Image
                 src="/instructor.jpg"
-                alt="Angrej Singh — NCLEX coach"
+                alt="Angrej Singh, NCLEX coach"
                 width={480}
                 height={576}
-                className="w-full h-auto object-cover aspect-[5/6]"
+                className="aspect-[5/6] h-auto w-full object-cover"
               />
             </div>
 
@@ -53,7 +65,7 @@ export function Instructor() {
                     href={chip.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-semibold text-white hover:bg-white/15 transition-colors"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-white/15"
                   >
                     {chip.icon}
                     {chip.label}
@@ -67,14 +79,14 @@ export function Instructor() {
             <p className="text-xs font-semibold uppercase tracking-wider text-brand-yellow">
               Meet your instructor
             </p>
-            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-balance">
-              Angrej Singh — registered nurse, NCLEX coach, full-time teacher.
+            <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-balance md:text-4xl lg:text-5xl">
+              Angrej Singh, registered nurse, NCLEX coach, and full-time teacher.
             </h2>
-            <div className="mt-6 space-y-4 text-white/90 leading-relaxed">
+            <div className="mt-6 space-y-4 leading-relaxed text-white/90">
               <p>
                 Angrej Singh teaches every live class on this platform. Not a TA,
-                not a guest instructor, not a rotating panel — the same teacher
-                from your first session to your last.
+                not a guest instructor, not a rotating panel, just the same
+                teacher from your first session to your last.
               </p>
               <p>
                 His students are RN and RPN candidates from across Canada and
@@ -92,7 +104,7 @@ export function Instructor() {
                 href={site.brand.socials.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm rounded-full font-semibold border-2 border-white text-white hover:bg-white hover:text-brand-blue-dark transition-colors"
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-brand-blue-dark"
               >
                 Watch on YouTube
               </a>

@@ -12,7 +12,7 @@ const items: Item[] = [
   {
     icon: User,
     title: 'Same teacher, every single class.',
-    body: 'Both morning and evening batches are taught directly by Angrej Singh. No swapped instructors, no rotation — one teaching style throughout your prep.',
+    body: 'Both morning and evening batches are taught directly by Angrej Singh. No swapped instructors and no rotation, just one teaching style throughout your prep.',
   },
   {
     icon: Calendar,
@@ -22,7 +22,7 @@ const items: Item[] = [
   {
     icon: PlayCircle,
     title: 'Miss a class? No problem.',
-    body: 'Join the alternate batch the same day, or watch the recording. Revision support is built into the program — not a paid add-on.',
+    body: 'Join the alternate batch the same day, or watch the recording. Revision support is built into the program, not sold as a paid add-on.',
   },
 ];
 
@@ -42,19 +42,17 @@ export function WhyAngrej() {
             align="center"
           />
 
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
             {items.map(({ icon: Icon, title, body }) => (
               <article
                 key={title}
-                className="bg-white rounded-2xl p-6 md:p-8 shadow-card border border-ink-100"
+                className="rounded-2xl border border-ink-100 bg-white p-6 shadow-card md:p-8"
               >
-                <div className="bg-brand-blue-soft rounded-xl p-3 w-fit mb-5">
+                <div className="mb-5 w-fit rounded-xl bg-brand-blue-soft p-3">
                   <Icon size={28} className="text-brand-blue" aria-hidden="true" />
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold text-ink-900">
-                  {title}
-                </h3>
-                <p className="mt-3 text-ink-700 leading-relaxed">{body}</p>
+                <h3 className="text-xl font-bold text-ink-900 md:text-2xl">{title}</h3>
+                <p className="mt-3 leading-relaxed text-ink-700">{body}</p>
               </article>
             ))}
           </div>

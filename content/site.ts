@@ -13,12 +13,12 @@ export const site = {
     },
   },
   offerBar:
-    '🎓 Live NCLEX coaching by Angrej Singh — $1200 / 120 days · Limited seats · Call +1 (647) 507-3871',
+    'Live NCLEX coaching by Angrej Singh. $1200 / 120 days. Limited seats. Call +1 (647) 507-3871',
   hero: {
-    badge: 'NCLEX coaching · Live + Recorded',
+    badge: 'Live NCLEX coaching',
     title: 'Pass your NCLEX with one teacher who actually shows up.',
     subtitle:
-      'Live RN and RPN coaching by Angrej Singh — same teacher every class, morning or evening batch, recordings included.',
+      'Live RN and RPN coaching by Angrej Singh, with the same teacher in every class, morning or evening batch, and recordings included.',
   },
   pricing: {
     amount: 1200,

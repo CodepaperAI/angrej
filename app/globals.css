@@ -108,3 +108,60 @@
 .skip-link:focus {
   top: 1rem;
 }
+
+.testimonial-marquee {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+}
+
+.testimonial-track {
+  display: flex;
+  width: max-content;
+  animation: testimonial-marquee 78s linear infinite;
+  will-change: transform;
+}
+
+.testimonial-track--reverse {
+  animation-direction: reverse;
+  animation-duration: 92s;
+}
+
+.testimonial-set {
+  display: flex;
+  gap: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.testimonial-marquee:hover .testimonial-track {
+  animation-play-state: paused;
+}
+
+@keyframes testimonial-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-marquee {
+    overflow-x: auto;
+    mask-image: none;
+  }
+
+  .testimonial-track,
+  .testimonial-track--reverse {
+    width: max-content;
+    animation: none;
+  }
+}

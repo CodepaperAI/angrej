@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Angrej Singh NCLEX | Live coaching for RN and RPN',
     description:
-      'Live NCLEX coaching with Angrej Singh — same teacher every class, recordings included.',
+      'Live NCLEX coaching with Angrej Singh, same teacher every class, recordings included.',
     images: ['/og-image.png'],
     url: 'https://angrej.vercel.app',
     siteName: 'Angrej Singh NCLEX',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Angrej Singh NCLEX | Live RN and RPN coaching',
     description:
-      'Live NCLEX coaching with Angrej Singh — same teacher every class, recordings included.',
+      'Live NCLEX coaching with Angrej Singh, same teacher every class, recordings included.',
     images: ['/og-image.png'],
   },
   robots: { index: true, follow: true },
@@ -51,7 +51,7 @@ export default function RootLayout({
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
-        {/* TODO: Vinay — drop GA4 / Meta Pixel <Script> tags here when ready */}
+        {/* TODO: Vinay - drop GA4 / Meta Pixel <Script> tags here when ready */}
       </body>
     </html>
   );
