@@ -14,13 +14,13 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://angrej.vercel.app'),
-  title: 'Angrej Singh NCLEX | Live RN and RPN coaching',
+  title: 'Angrej Singh Nursing Mastery | Student-first nursing support',
   description:
-    'Live NCLEX-RN and NCLEX-PN (RPN) coaching by Angrej Singh. One teacher, morning and evening batches, recordings included. $1200 / 120 days.',
+    'Student-first nursing support by Angrej Singh for nursing school exams, NCLEX preparation, and career confidence.',
   openGraph: {
-    title: 'Angrej Singh NCLEX | Live coaching for RN and RPN',
+    title: 'Angrej Singh Nursing Mastery | Student-first nursing support',
     description:
-      'Live NCLEX coaching with Angrej Singh, same teacher every class, recordings included.',
+      'Nursing mastery with honest teaching, patient explanations, and support that puts student success first.',
     images: ['/og-image.png'],
     url: 'https://angrej.vercel.app',
     siteName: 'Angrej Singh NCLEX',
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Angrej Singh NCLEX | Live RN and RPN coaching',
+    title: 'Angrej Singh Nursing Mastery | Student-first nursing support',
     description:
-      'Live NCLEX coaching with Angrej Singh, same teacher every class, recordings included.',
+      'Nursing mastery with honest teaching, patient explanations, and support that puts student success first.',
     images: ['/og-image.png'],
   },
   robots: { index: true, follow: true },

@@ -19,11 +19,12 @@ export function FinalCTA({ variant = 'both' }: { variant?: Variant }) {
           className="max-w-3xl mx-auto text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-ink-900 text-balance">
-            Ready to start your NCLEX prep?
+            Your dream deserves a teacher who cares as much as you do.
           </h2>
           <p className="mt-4 text-base md:text-lg text-ink-700 leading-relaxed">
-            Join the next batch with Angrej Singh. Pick your pathway and we&apos;ll
-            take it from there.
+            Whether you&apos;re preparing for nursing school exams, licensing
+            exams, or the next chapter of your nursing career, we&apos;re ready
+            to help you move forward with confidence.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
@@ -48,6 +49,9 @@ export function FinalCTA({ variant = 'both' }: { variant?: Variant }) {
               {site.brand.phone}
             </a>
           </p>
+          <blockquote className="mt-8 text-xl font-extrabold italic leading-tight text-ink-900 md:text-2xl">
+            &ldquo;When students succeed, we succeed.&rdquo;
+          </blockquote>
         </motion.div>
       </Container>
     </section>

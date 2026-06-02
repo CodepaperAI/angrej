@@ -45,7 +45,7 @@ export function Footer() {
               className="h-8 w-auto object-contain brightness-0 invert"
             />
             <p className="mt-4 text-sm text-ink-300 leading-relaxed max-w-xs">
-              Live NCLEX coaching for RN and RPN aspirants.
+              {site.brand.tagline}
             </p>
           </div>
 

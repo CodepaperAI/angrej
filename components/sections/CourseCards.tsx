@@ -25,7 +25,7 @@ export function CourseCards() {
           <SectionHeader
             eyebrow="Choose your pathway"
             title="Three pathways. Same teacher."
-            subtitle="Now each course is previewed with its own branded thumbnail, so the offer feels closer to the real Angrej Singh sales material."
+            subtitle="Choose the pathway that matches your next step, from nursing school support to RN, RPN, and NCLEX preparation."
             align="center"
           />
 

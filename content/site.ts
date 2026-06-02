@@ -1,7 +1,7 @@
 export const site = {
   brand: {
     name: 'Angrej Singh NCLEX',
-    tagline: 'Live NCLEX coaching for RN and RPN aspirants',
+    tagline: 'Nursing mastery for students preparing for school, exams, and career growth',
     phone: '+1 (647) 507-3871',
     phoneTel: '+16475073871',
     email: 'angrejs272@gmail.com',
@@ -13,12 +13,16 @@ export const site = {
     },
   },
   offerBar:
-    'Live NCLEX coaching by Angrej Singh. $1200 / 120 days. Limited seats. Call +1 (647) 507-3871',
+    'Nursing Mastery with Angrej Singh. Your success comes first. Call +1 (647) 507-3871',
   hero: {
-    badge: 'Live NCLEX coaching',
-    title: 'Pass your NCLEX with one teacher who actually shows up.',
+    badge: 'Nursing Mastery',
+    title: 'Where nursing students stop struggling and start believing in themselves.',
     subtitle:
-      'Live RN and RPN coaching by Angrej Singh, with the same teacher in every class, morning or evening batch, and recordings included.',
+      'Whether you are preparing for nursing school exams, NCLEX, or your nursing career, you will be taught with honesty, dedication, and a simple goal:',
+    successLine: 'Your success comes first.',
+    quote:
+      "I don't teach to finish a syllabus. I teach until students understand.",
+    quoteAttribution: 'Angrej Singh',
   },
   pricing: {
     amount: 1200,

@@ -60,11 +60,15 @@
 
   html {
     scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: clip;
   }
 
   body {
     margin: 0;
     min-height: 100vh;
+    max-width: 100%;
+    overflow-x: clip;
     background: var(--white);
     color: var(--ink-900);
     font-family: var(--font-plus-jakarta), system-ui, sans-serif;
@@ -107,6 +111,34 @@
 
 .skip-link:focus {
   top: 1rem;
+}
+
+.hero-copy,
+.hero-media {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.hero-title {
+  letter-spacing: 0;
+}
+
+.hero-title,
+.hero-copy p,
+.hero-copy blockquote {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 639px) {
+  .hero-section {
+    overflow-x: clip;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.08;
+  }
 }
 
 .testimonial-marquee {
