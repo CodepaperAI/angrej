@@ -34,7 +34,7 @@ export function CourseDetail({ course }: { course: Course }) {
       : 'from-brand-yellow-soft via-white to-white';
   const accentBorderClass =
     course.accent === 'blue' ? 'border-brand-blue' : 'border-brand-yellow';
-  const enrollHref = `/contact?course=${course.slug}`;
+  const enrollHref = '/contact?course=complete';
 
   return (
     <>

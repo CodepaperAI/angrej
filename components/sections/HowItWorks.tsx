@@ -7,13 +7,13 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 const steps = [
   {
     n: 1,
-    title: 'Choose your pathway',
-    body: 'RN or RPN, based on the exam you are preparing for.',
+    title: 'Enroll in the course',
+    body: 'One enrollment gives you access to nursing school support, NCLEX prep, and course materials.',
   },
   {
     n: 2,
     title: 'Contact us',
-    body: 'Send a message with your batch preference (morning or evening).',
+    body: 'Send a message with your preferred timing and the best way to reach you.',
   },
   {
     n: 3,
@@ -39,7 +39,7 @@ export function HowItWorks() {
         >
           <SectionHeader
             eyebrow="How enrollment works"
-            title="Four simple steps to start your NCLEX prep."
+            title="Four simple steps to start learning."
             align="center"
           />
 

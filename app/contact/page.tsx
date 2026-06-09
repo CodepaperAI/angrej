@@ -8,12 +8,12 @@ import { site } from '@/content/site';
 export const metadata: Metadata = {
   title: 'Contact | Angrej Singh NCLEX',
   description:
-    "Get in touch with Angrej Singh NCLEX. We'll respond within one business day.",
+    "Get in touch for Angrej Singh course enrollment. We'll respond within one business day.",
   alternates: { canonical: '/contact' },
   openGraph: {
     title: 'Contact | Angrej Singh NCLEX',
     description:
-      "Get in touch about RN or RPN coaching. We'll respond within one business day.",
+      "Get in touch for Angrej Singh course enrollment. We'll respond within one business day.",
     url: '/contact',
     type: 'website',
   },
@@ -35,7 +35,7 @@ export default function ContactPage() {
               Let&apos;s get you started.
             </h1>
             <p className="mt-4 text-base md:text-lg text-ink-700 leading-relaxed max-w-xl">
-              Tell us which pathway you want and the best way to reach you.
+              Tell us you&apos;re ready to enroll and the best way to reach you.
               We&apos;ll respond within one business day.
             </p>
             <div className="mt-8">
@@ -66,7 +66,7 @@ export default function ContactPage() {
               </a>
               <p className="flex items-center gap-3 text-ink-700">
                 <Clock size={20} className="text-brand-blue shrink-0" aria-hidden="true" />
-                <span>Mon–Sat, 9am–6pm ET</span>
+                <span>Mon-Sat, 9am-6pm ET</span>
               </p>
             </div>
 

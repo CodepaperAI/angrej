@@ -5,7 +5,7 @@ const schema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
   phone: z.string().min(7),
-  pathway: z.enum(['rn', 'rpn', 'psychology', 'unsure']),
+  pathway: z.enum(['complete', 'unsure']),
   batch: z.enum(['morning', 'evening', 'none']).optional(),
   message: z.string().optional(),
 });

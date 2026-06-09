@@ -5,9 +5,7 @@ import { site } from '@/content/site';
 
 const quickLinks = [
   { label: 'Home', href: '/' },
-  { label: 'NCLEX-RN', href: '/rn' },
-  { label: 'NCLEX-PN (RPN)', href: '/rpn' },
-  { label: 'Human Psychology', href: '/psychology' },
+  { label: 'Course', href: '/#course' },
   { label: 'Resources', href: '/resources' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
@@ -152,7 +150,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-6 border-t border-white/10 text-sm text-ink-300">
-          <p>© {new Date().getFullYear()} {site.brand.name}. All rights reserved.</p>
+          <p>Copyright {new Date().getFullYear()} {site.brand.name}. All rights reserved.</p>
         </div>
       </div>
     </footer>

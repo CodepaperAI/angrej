@@ -10,9 +10,7 @@ import { site } from '@/content/site';
 
 const navLinks = [
   { label: 'Home', href: '/' },
-  { label: 'NCLEX-RN', href: '/rn' },
-  { label: 'NCLEX-PN (RPN)', href: '/rpn' },
-  { label: 'Psychology', href: '/psychology' },
+  { label: 'Course', href: '/#course' },
   { label: 'Resources', href: '/resources' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
@@ -62,8 +60,8 @@ export function Header() {
           >
             {site.brand.phone}
           </a>
-          <Button href="/contact" variant="primary" size="md">
-            Enroll Now
+          <Button href="/contact?course=complete" variant="primary" size="md">
+            Enroll
           </Button>
         </div>
 
@@ -102,8 +100,8 @@ export function Header() {
               >
                 Call {site.brand.phone}
               </a>
-              <Button href="/contact" variant="primary" size="md" className="w-full">
-                Enroll Now
+              <Button href="/contact?course=complete" variant="primary" size="md" className="w-full">
+                Enroll
               </Button>
             </div>
           </nav>

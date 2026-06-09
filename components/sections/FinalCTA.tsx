@@ -7,7 +7,7 @@ import { site } from '@/content/site';
 
 type Variant = 'both' | 'rn-only' | 'rpn-only';
 
-export function FinalCTA({ variant = 'both' }: { variant?: Variant }) {
+export function FinalCTA({ variant: _variant = 'both' }: { variant?: Variant }) {
   return (
     <section className="bg-brand-yellow py-16 md:py-20">
       <Container>
@@ -27,17 +27,10 @@ export function FinalCTA({ variant = 'both' }: { variant?: Variant }) {
             to help you move forward with confidence.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3 justify-center">
-            {(variant === 'both' || variant === 'rn-only') && (
-              <Button href="/contact?course=rn" variant="primary" size="lg">
-                Enroll in RN
-              </Button>
-            )}
-            {(variant === 'both' || variant === 'rpn-only') && (
-              <Button href="/contact?course=rpn" variant="outline" size="lg">
-                Enroll in RPN
-              </Button>
-            )}
+          <div className="mt-8 flex justify-center">
+            <Button href="/contact?course=complete" variant="primary" size="lg">
+              Enroll
+            </Button>
           </div>
 
           <p className="mt-6 text-sm text-ink-700">

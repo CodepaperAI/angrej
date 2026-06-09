@@ -12,7 +12,7 @@ const schema = z.object({
   name: z.string().min(2, 'Please enter your full name'),
   email: z.string().email('Please enter a valid email'),
   phone: z.string().min(7, 'Please enter a valid phone number'),
-  pathway: z.enum(['rn', 'rpn', 'psychology', 'unsure']),
+  pathway: z.enum(['complete', 'unsure']),
   batch: z.enum(['morning', 'evening', 'none']).optional(),
   message: z.string().optional(),
 });
@@ -20,9 +20,7 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 const pathwayOptions: { value: FormValues['pathway']; label: string }[] = [
-  { value: 'rn', label: 'NCLEX-RN' },
-  { value: 'rpn', label: 'NCLEX-PN (RPN)' },
-  { value: 'psychology', label: 'Human Psychology' },
+  { value: 'complete', label: 'Nursing Mastery Complete Course' },
   { value: 'unsure', label: 'Not sure yet' },
 ];
 
@@ -36,13 +34,12 @@ export function ContactForm() {
   const searchParams = useSearchParams();
   const courseParam = searchParams.get('course');
   const initialPathway: FormValues['pathway'] =
-    courseParam === 'rn'
-      ? 'rn'
-      : courseParam === 'rpn'
-        ? 'rpn'
-        : courseParam === 'psychology'
-          ? 'psychology'
-          : 'unsure';
+    courseParam === 'complete' ||
+    courseParam === 'rn' ||
+    courseParam === 'rpn' ||
+    courseParam === 'psychology'
+      ? 'complete'
+      : 'unsure';
 
   const [submitState, setSubmitState] = useState<'idle' | 'submitting' | 'success' | 'error'>(
     'idle',
@@ -105,7 +102,7 @@ export function ContactForm() {
         </h2>
         <p className="mt-3 text-ink-700 leading-relaxed max-w-md mx-auto">
           Thanks for reaching out. We&apos;ll be in touch shortly with next
-          steps for your NCLEX prep.
+          steps for your course enrollment.
         </p>
       </div>
     );
@@ -157,7 +154,7 @@ export function ContactForm() {
 
       <fieldset>
         <legend className="block text-sm font-semibold text-ink-900 mb-2">
-          Pathway interest <span className="text-danger">*</span>
+          Course interest <span className="text-danger">*</span>
         </legend>
         <div className="flex flex-wrap gap-2">
           {pathwayOptions.map((opt) => (
@@ -216,7 +213,7 @@ export function ContactForm() {
           className="w-full sm:w-auto"
           disabled={submitState === 'submitting'}
         >
-          {submitState === 'submitting' ? 'Sending...' : 'Send message'}
+          {submitState === 'submitting' ? 'Sending...' : 'Enroll'}
         </Button>
       </div>
     </form>

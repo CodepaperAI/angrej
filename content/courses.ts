@@ -95,7 +95,7 @@ export const courses: Record<CourseSlug, Course> = {
       intro:
         'Live NCLEX-RN classes with Angrej Singh, morning or evening batch, recordings included, plus 3000+ practice questions and clinical case scenarios, all under one $1200 / 120-day enrollment.',
     },
-    enrollCta: 'Enroll Now',
+    enrollCta: 'Enroll',
   },
   rpn: {
     slug: 'rpn',
@@ -168,7 +168,7 @@ export const courses: Record<CourseSlug, Course> = {
       intro:
         'Live NCLEX-PN classes with Angrej Singh, morning or evening batch, recordings included, with practice tests and clinical reasoning practice, all under one $1200 / 120-day enrollment.',
     },
-    enrollCta: 'Enroll Now',
+    enrollCta: 'Enroll',
   },
   // TODO: Vinay - confirm bullets, features, curriculum, and access period for Human Psychology.
   // Pricing ($499) confirmed from the live site screenshot. Access period was not visible there, so "Self-paced access" is still a placeholder.
@@ -244,6 +244,6 @@ export const courses: Record<CourseSlug, Course> = {
       intro:
         'A self-paced course on understanding people, motivations, communication, and behavior. Designed for nurses and learners who want to be better at reading and working with people.',
     },
-    enrollCta: 'Enroll Now',
+    enrollCta: 'Enroll',
   },
 };
