@@ -24,7 +24,7 @@ export function CourseCards() {
         >
           <SectionHeader
             eyebrow="Choose your pathway"
-            title="Three pathways. Same teacher."
+            title="Choose your course. Learn with Angrej Singh."
             subtitle="Choose the pathway that matches your next step, from nursing school support to RN, RPN, and NCLEX preparation."
             align="center"
           />

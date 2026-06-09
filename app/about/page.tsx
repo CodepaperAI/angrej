@@ -20,15 +20,6 @@ export const metadata: Metadata = {
   },
 };
 
-const stats = [
-  // TODO: Vinay — verify and update with the actual student count
-  { value: '500+', label: 'Students taught' },
-  // TODO: Vinay — verify and update with the actual NCLEX pass count
-  { value: '400+', label: 'NCLEX passes' },
-  { value: '2', label: 'Pathways (RN & RPN)' },
-  { value: '1', label: 'Teacher (Angrej Singh)' },
-];
-
 const values = [
   {
     icon: Repeat,
@@ -98,23 +89,6 @@ export default function AboutPage() {
                 nurses, recent graduates, and career changers alike.
               </p>
             </div>
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-brand-blue-soft py-12 md:py-16">
-        <Container>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((s) => (
-              <div key={s.label} className="text-center">
-                <p className="text-4xl md:text-5xl font-extrabold text-brand-blue-dark">
-                  {s.value}
-                </p>
-                <p className="mt-2 text-sm font-semibold text-ink-700">
-                  {s.label}
-                </p>
-              </div>
-            ))}
           </div>
         </Container>
       </section>

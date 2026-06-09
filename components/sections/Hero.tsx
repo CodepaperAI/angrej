@@ -22,19 +22,19 @@ const TikTokIcon = ({ size = 16 }: { size?: number }) => (
 
 const socialStats = [
   {
-    label: '15K followers',
+    label: 'Instagram',
     href: site.brand.socials.instagram,
     ariaLabel: 'Instagram',
     icon: Instagram,
   },
   {
-    label: '5K subscribers',
+    label: 'YouTube',
     href: site.brand.socials.youtube,
     ariaLabel: 'YouTube',
     icon: Youtube,
   },
   {
-    label: '10K followers',
+    label: 'TikTok',
     href: site.brand.socials.tiktok,
     ariaLabel: 'TikTok',
     icon: TikTokIcon,
