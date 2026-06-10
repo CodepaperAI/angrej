@@ -5,7 +5,9 @@ import { site } from '@/content/site';
 
 const quickLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Course', href: '/#course' },
+  { label: 'NCLEX-RN', href: '/rn' },
+  { label: 'NCLEX-PN (RPN)', href: '/rpn' },
+  { label: 'Psychology', href: '/psychology' },
   { label: 'Resources', href: '/resources' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },

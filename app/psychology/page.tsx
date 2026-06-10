@@ -23,7 +23,7 @@ export default function PsychologyPage() {
     <>
       <CourseDetail course={courses.psychology} />
       <FAQ />
-      <FinalCTA />
+      <FinalCTA variant="psychology-only" />
     </>
   );
 }

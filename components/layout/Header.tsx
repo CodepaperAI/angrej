@@ -2,26 +2,66 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { site } from '@/content/site';
 
 const navLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Course', href: '/#course' },
   { label: 'Resources', href: '/resources' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ];
 
+const courseLinks = [
+  { label: 'NCLEX-RN', href: '/rn' },
+  { label: 'NCLEX-PN (RPN)', href: '/rpn' },
+  { label: 'Psychology', href: '/psychology' },
+];
+
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [desktopCoursesOpen, setDesktopCoursesOpen] = useState(false);
+  const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
+  const coursesMenuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname.startsWith(href);
+  const isCourseActive = courseLinks.some((link) => isActive(link.href));
+
+  useEffect(() => {
+    const closeDesktopCourses = (event: MouseEvent) => {
+      if (
+        coursesMenuRef.current &&
+        !coursesMenuRef.current.contains(event.target as Node)
+      ) {
+        setDesktopCoursesOpen(false);
+      }
+    };
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setDesktopCoursesOpen(false);
+        setMobileCoursesOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', closeDesktopCourses);
+    document.addEventListener('keydown', closeOnEscape);
+
+    return () => {
+      document.removeEventListener('mousedown', closeDesktopCourses);
+      document.removeEventListener('keydown', closeOnEscape);
+    };
+  }, []);
+
+  const closeMobileMenu = () => {
+    setOpen(false);
+    setMobileCoursesOpen(false);
+  };
 
   return (
     <header className="sticky top-9 z-40 bg-white border-b border-ink-100">
@@ -38,7 +78,60 @@ export function Header() {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Primary">
-          {navLinks.map((link) => (
+          <Link
+            href="/"
+            className={`text-sm font-semibold transition-colors ${
+              isActive('/') ? 'text-brand-blue' : 'text-ink-700 hover:text-brand-blue'
+            }`}
+          >
+            Home
+          </Link>
+
+          <div ref={coursesMenuRef} className="relative">
+            <button
+              type="button"
+              aria-haspopup="menu"
+              aria-expanded={desktopCoursesOpen}
+              onClick={() => setDesktopCoursesOpen((value) => !value)}
+              className={`inline-flex items-center gap-1.5 text-sm font-semibold transition-colors ${
+                isCourseActive || desktopCoursesOpen
+                  ? 'text-brand-blue'
+                  : 'text-ink-700 hover:text-brand-blue'
+              }`}
+            >
+              Courses
+              <ChevronDown
+                size={16}
+                className={`transition-transform ${desktopCoursesOpen ? 'rotate-180' : ''}`}
+                aria-hidden="true"
+              />
+            </button>
+
+            {desktopCoursesOpen && (
+              <div
+                role="menu"
+                className="absolute left-1/2 top-full z-50 mt-4 w-64 -translate-x-1/2 rounded-xl border border-ink-100 bg-white p-2 shadow-card-hover"
+              >
+                {courseLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    role="menuitem"
+                    onClick={() => setDesktopCoursesOpen(false)}
+                    className={`block rounded-lg px-4 py-3 text-sm font-semibold transition-colors ${
+                      isActive(link.href)
+                        ? 'bg-brand-blue-soft text-brand-blue'
+                        : 'text-ink-700 hover:bg-bg-soft hover:text-brand-blue'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {navLinks.slice(1).map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -60,7 +153,7 @@ export function Header() {
           >
             {site.brand.phone}
           </a>
-          <Button href="/contact?course=complete" variant="primary" size="md">
+          <Button href="/#courses" variant="primary" size="md">
             Enroll
           </Button>
         </div>
@@ -69,7 +162,10 @@ export function Header() {
           type="button"
           aria-label="Open menu"
           aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => {
+            setOpen((value) => !value);
+            setMobileCoursesOpen(false);
+          }}
           className="lg:hidden p-2 -mr-2 text-ink-900"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
@@ -79,11 +175,60 @@ export function Header() {
       {open && (
         <div className="lg:hidden border-t border-ink-100 bg-white">
           <nav className="max-w-6xl mx-auto px-4 md:px-6 py-4 flex flex-col gap-1" aria-label="Mobile">
-            {navLinks.map((link) => (
+            <Link
+              href="/"
+              onClick={closeMobileMenu}
+              className={`px-3 py-3 rounded-lg font-semibold ${
+                isActive('/')
+                  ? 'bg-brand-blue-soft text-brand-blue'
+                  : 'text-ink-700 hover:bg-bg-soft'
+              }`}
+            >
+              Home
+            </Link>
+
+            <button
+              type="button"
+              aria-expanded={mobileCoursesOpen}
+              onClick={() => setMobileCoursesOpen((value) => !value)}
+              className={`flex items-center justify-between rounded-lg px-3 py-3 text-left font-semibold ${
+                isCourseActive || mobileCoursesOpen
+                  ? 'bg-brand-blue-soft text-brand-blue'
+                  : 'text-ink-700 hover:bg-bg-soft'
+              }`}
+            >
+              Courses
+              <ChevronDown
+                size={18}
+                className={`transition-transform ${mobileCoursesOpen ? 'rotate-180' : ''}`}
+                aria-hidden="true"
+              />
+            </button>
+
+            {mobileCoursesOpen && (
+              <div className="ml-3 flex flex-col gap-1 border-l border-ink-100 pl-3">
+                {courseLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={closeMobileMenu}
+                    className={`rounded-lg px-3 py-2.5 text-sm font-semibold ${
+                      isActive(link.href)
+                        ? 'bg-brand-blue-soft text-brand-blue'
+                        : 'text-ink-700 hover:bg-bg-soft'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+
+            {navLinks.slice(1).map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={() => setOpen(false)}
+                onClick={closeMobileMenu}
                 className={`px-3 py-3 rounded-lg font-semibold ${
                   isActive(link.href)
                     ? 'bg-brand-blue-soft text-brand-blue'
@@ -100,7 +245,7 @@ export function Header() {
               >
                 Call {site.brand.phone}
               </a>
-              <Button href="/contact?course=complete" variant="primary" size="md" className="w-full">
+              <Button href="/#courses" variant="primary" size="md" className="w-full">
                 Enroll
               </Button>
             </div>

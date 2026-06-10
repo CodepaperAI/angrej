@@ -30,7 +30,7 @@ export const courses: Record<CourseSlug, Course> = {
     badgeTone: 'blue',
     accent: 'blue',
     thumbnailSrc: '/course-rn.jpg',
-    thumbnailAlt: 'RN NCLEX complete course thumbnail',
+    thumbnailAlt: 'RN NCLEX course thumbnail',
     title: 'NCLEX-RN',
     oneLiner:
       'Expert-led training for the NCLEX-RN exam, with practice tests and clinical case scenarios.',
@@ -103,7 +103,7 @@ export const courses: Record<CourseSlug, Course> = {
     badgeTone: 'yellow',
     accent: 'yellow',
     thumbnailSrc: '/course-rpn.jpg',
-    thumbnailAlt: 'RPN NCLEX complete course thumbnail',
+    thumbnailAlt: 'RPN NCLEX course thumbnail',
     title: 'NCLEX-PN (RPN)',
     oneLiner:
       'Comprehensive online RPN training for international practical nurses entering Canadian practice.',

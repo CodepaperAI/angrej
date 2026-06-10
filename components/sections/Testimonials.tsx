@@ -20,9 +20,9 @@ export function Testimonials() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           <SectionHeader
-            eyebrow="Student success stories"
-            title="What students say about Angrej Singh NCLEX"
-            subtitle="Real feedback from learners who chose live coaching, clear explanations, and steady support for their NCLEX preparation."
+            eyebrow="Student feedback"
+            title="What people say about Angrej Singh's teaching."
+            subtitle="Real feedback from students who experienced his clear explanations, patient guidance, and steady support."
             align="center"
           />
         </motion.div>

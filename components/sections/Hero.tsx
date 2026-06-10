@@ -74,7 +74,7 @@ export function Hero() {
             </figure>
 
             <div className="mt-7 flex flex-wrap gap-3">
-              <Button href="/contact?course=complete" variant="primary" size="lg">
+              <Button href="/#courses" variant="primary" size="lg">
                 Enroll
               </Button>
             </div>

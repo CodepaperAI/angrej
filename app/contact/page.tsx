@@ -35,8 +35,9 @@ export default function ContactPage() {
               Let&apos;s get you started.
             </h1>
             <p className="mt-4 text-base md:text-lg text-ink-700 leading-relaxed max-w-xl">
-              Tell us you&apos;re ready to enroll and the best way to reach you.
-              We&apos;ll respond within one business day.
+              Choose the individual course you want to enroll in and tell us
+              the best way to reach you. We&apos;ll respond within one business
+              day.
             </p>
             <div className="mt-8">
               <Suspense fallback={<div className="text-ink-500">Loading form...</div>}>

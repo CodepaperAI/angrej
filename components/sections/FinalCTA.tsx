@@ -5,9 +5,16 @@ import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { site } from '@/content/site';
 
-type Variant = 'both' | 'rn-only' | 'rpn-only';
+type Variant = 'courses' | 'rn-only' | 'rpn-only' | 'psychology-only';
 
-export function FinalCTA({ variant: _variant = 'both' }: { variant?: Variant }) {
+const enrollLinks: Record<Variant, string> = {
+  courses: '/#courses',
+  'rn-only': '/contact?course=rn',
+  'rpn-only': '/contact?course=rpn',
+  'psychology-only': '/contact?course=psychology',
+};
+
+export function FinalCTA({ variant = 'courses' }: { variant?: Variant }) {
   return (
     <section className="bg-brand-yellow py-16 md:py-20">
       <Container>
@@ -28,7 +35,7 @@ export function FinalCTA({ variant: _variant = 'both' }: { variant?: Variant }) 
           </p>
 
           <div className="mt-8 flex justify-center">
-            <Button href="/contact?course=complete" variant="primary" size="lg">
+            <Button href={enrollLinks[variant]} variant="primary" size="lg">
               Enroll
             </Button>
           </div>

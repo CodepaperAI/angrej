@@ -7,13 +7,13 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 const steps = [
   {
     n: 1,
-    title: 'Enroll in the course',
-    body: 'One enrollment gives you access to nursing school support, NCLEX prep, and course materials.',
+    title: 'Choose your course',
+    body: 'Select NCLEX-RN, NCLEX-PN (RPN), or Human Psychology.',
   },
   {
     n: 2,
-    title: 'Contact us',
-    body: 'Send a message with your preferred timing and the best way to reach you.',
+    title: 'Enroll',
+    body: 'Complete the enrollment form for your selected course.',
   },
   {
     n: 3,

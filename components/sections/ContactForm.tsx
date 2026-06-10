@@ -12,7 +12,7 @@ const schema = z.object({
   name: z.string().min(2, 'Please enter your full name'),
   email: z.string().email('Please enter a valid email'),
   phone: z.string().min(7, 'Please enter a valid phone number'),
-  pathway: z.enum(['complete', 'unsure']),
+  pathway: z.enum(['rn', 'rpn', 'psychology', 'unsure']),
   batch: z.enum(['morning', 'evening', 'none']).optional(),
   message: z.string().optional(),
 });
@@ -20,7 +20,9 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 const pathwayOptions: { value: FormValues['pathway']; label: string }[] = [
-  { value: 'complete', label: 'Nursing Mastery Complete Course' },
+  { value: 'rn', label: 'NCLEX-RN' },
+  { value: 'rpn', label: 'NCLEX-PN (RPN)' },
+  { value: 'psychology', label: 'Human Psychology' },
   { value: 'unsure', label: 'Not sure yet' },
 ];
 
@@ -34,12 +36,13 @@ export function ContactForm() {
   const searchParams = useSearchParams();
   const courseParam = searchParams.get('course');
   const initialPathway: FormValues['pathway'] =
-    courseParam === 'complete' ||
-    courseParam === 'rn' ||
-    courseParam === 'rpn' ||
-    courseParam === 'psychology'
-      ? 'complete'
-      : 'unsure';
+    courseParam === 'rn'
+      ? 'rn'
+      : courseParam === 'rpn'
+        ? 'rpn'
+        : courseParam === 'psychology'
+          ? 'psychology'
+          : 'unsure';
 
   const [submitState, setSubmitState] = useState<'idle' | 'submitting' | 'success' | 'error'>(
     'idle',
