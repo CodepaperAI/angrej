@@ -21,6 +21,19 @@ export type Course = {
     intro: string;
   };
   enrollCta: string;
+  // Optional rich program detail (currently used by the NCLEX-RN program).
+  // Components render each block only when the field is present, so courses
+  // without them keep their existing layout.
+  subtitle?: string;
+  programOverview?: string;
+  duration?: { headline: string; points: string[] };
+  schedule?: { name: string; days: string; time: string }[];
+  coreSubjects?: string[];
+  featureGroups?: { title: string; items: string[] }[];
+  studentSupport?: string[];
+  idealFor?: string[];
+  policy?: string[];
+  includes?: string[];
 };
 
 export const courses: Record<CourseSlug, Course> = {
@@ -32,14 +45,17 @@ export const courses: Record<CourseSlug, Course> = {
     thumbnailSrc: '/course-rn.jpg',
     thumbnailAlt: 'RN NCLEX course thumbnail',
     title: 'NCLEX-RN',
+    subtitle:
+      'Expert-led NCLEX-RN training with practice tests and clinical case scenarios.',
     oneLiner:
-      'Expert-led training for the NCLEX-RN exam, with practice tests and clinical case scenarios.',
+      'Live, interactive NCLEX-RN coaching with 6,500+ practice questions, weekly mock tests, and dedicated SATA prep. Join an ongoing batch anytime.',
     priceDisplay: '$1200',
-    accessLabel: '120 Days Access',
+    accessLabel: '4 Months Access',
     bullets: [
-      'Full NCLEX-RN exam content coverage',
-      '3000+ NCLEX-style practice questions',
-      'Personalized coaching and test-taking strategies',
+      'Live interactive classes, morning or evening batch',
+      '6,500+ exclusive NCLEX-RN practice questions',
+      '2 mock tests every week with detailed rationales',
+      'SATA practice sessions and test-taking strategies',
     ],
     features: [
       {
@@ -55,7 +71,7 @@ export const courses: Record<CourseSlug, Course> = {
         body: 'Class recordings are available throughout your access period.',
       },
       {
-        title: '3000+ practice questions',
+        title: '6,500+ practice questions',
         body: 'NCLEX-style questions with rationales for self-paced practice.',
       },
       {
@@ -63,7 +79,7 @@ export const courses: Record<CourseSlug, Course> = {
         body: 'Apply nursing concepts to realistic patient cases.',
       },
       {
-        title: '120 days full access',
+        title: '4 months full access',
         body: 'Live classes, recordings, and practice questions for the full term.',
       },
     ],
@@ -93,9 +109,121 @@ export const courses: Record<CourseSlug, Course> = {
       eyebrow: 'RN Pathway',
       title: 'NCLEX-RN live coaching for the registered nurse exam.',
       intro:
-        'Live NCLEX-RN classes with Angrej Singh, morning or evening batch, recordings included, plus 3000+ practice questions and clinical case scenarios, all under one $1200 / 120-day enrollment.',
+        'Live NCLEX-RN classes with Angrej Singh, morning or evening batch, recordings included, plus 6,500+ practice questions, weekly mock tests, and SATA prep, all under one $1200 / 4-month enrollment.',
     },
     enrollCta: 'Enroll',
+    programOverview:
+      'Our NCLEX-RN Comprehensive Preparation Program helps nursing graduates pass the NCLEX-RN examination through live interactive classes, extensive practice questions, mock exams, and expert guidance. Join an ongoing batch and continue your preparation right up until you sit for the exam.',
+    duration: {
+      headline: '4 Months Intensive Training Program',
+      points: [
+        'Classes run throughout the program period',
+        'Complete curriculum coverage before your examination',
+        'Join an ongoing batch anytime, no waiting required',
+      ],
+    },
+    schedule: [
+      {
+        name: 'Morning Batch',
+        days: 'Monday – Thursday',
+        time: '8:00 AM – 11:00 AM (Ontario Time)',
+      },
+      {
+        name: 'Evening Batch',
+        days: 'Monday – Thursday',
+        time: '5:30 PM – 8:30 PM (Ontario Time)',
+      },
+    ],
+    coreSubjects: [
+      'Fundamentals of Nursing',
+      'Medical-Surgical Nursing',
+      'Pharmacology',
+      'Mental Health Nursing',
+      'Maternity Nursing',
+      'Pediatric Nursing',
+      'Leadership & Management',
+      'Infection Control',
+      'Patient Safety',
+      'Health Promotion & Maintenance',
+      'Physiological Adaptation',
+      'Psychosocial Integrity',
+      'Reduction of Risk Potential',
+    ],
+    featureGroups: [
+      {
+        title: 'Live Interactive Classes',
+        items: [
+          '2.5–3 hours of live instruction per class',
+          'Detailed topic-by-topic explanations',
+          'Real-time interaction with instructors',
+        ],
+      },
+      {
+        title: 'Extensive Question Bank',
+        items: [
+          '6,500+ exclusive NCLEX-RN practice questions',
+          'Topic-wise MCQ practice',
+          'Exam-style question training',
+        ],
+      },
+      {
+        title: 'Weekly Mock Tests',
+        items: [
+          '2 mock tests every week',
+          'Detailed answer explanations',
+          'Rationales for both correct and incorrect options',
+        ],
+      },
+      {
+        title: 'SATA Preparation',
+        items: [
+          'Dedicated Select-All-That-Apply practice sessions',
+          'SATA mock examinations',
+          'Test-taking strategies for higher scores',
+        ],
+      },
+      {
+        title: 'Study Resources Included',
+        items: [
+          'NCLEX study materials and concise notes',
+          'Cheat sheets and quick revision guides',
+          'Exam strategies and tips',
+        ],
+      },
+      {
+        title: 'Test-Taking Strategies',
+        items: [
+          'Critical thinking and priority question approaches',
+          'Elimination methods and decision frameworks',
+          'Time management skills',
+        ],
+      },
+    ],
+    studentSupport: [
+      'Instructor guidance throughout the program',
+      'Performance monitoring',
+      'Doubt-clearing sessions',
+      'Exam readiness assessment',
+    ],
+    idealFor: [
+      'Internationally Educated Nurses (IENs)',
+      'Nursing graduates',
+      'Nurses preparing for NCLEX-RN',
+      'Repeat NCLEX test takers',
+    ],
+    policy: [
+      'Students are expected to appear for the NCLEX-RN exam within 4 months of enrollment.',
+      'If a student does not attempt the exam within the 4-month course period, access to classes may be discontinued.',
+      'If a student attempts the NCLEX-RN exam during the course period and does not pass, they may continue attending classes with no additional tuition fee, subject to program policies.',
+    ],
+    includes: [
+      '2.5–3 hours of live instruction per class',
+      '6,500+ practice questions with rationales',
+      '2 mock tests every week',
+      'SATA practice and mock examinations',
+      'Study materials, notes, and cheat sheets',
+      'Test-taking strategies and exam tips',
+    ],
   },
   rpn: {
     slug: 'rpn',

@@ -16,6 +16,7 @@ const navLinks = [
 ];
 
 const courseLinks = [
+  { label: 'All Courses', href: '/courses' },
   { label: 'NCLEX-RN', href: '/rn' },
   { label: 'NCLEX-PN (RPN)', href: '/rpn' },
   { label: 'Psychology', href: '/psychology' },
@@ -147,13 +148,25 @@ export function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
+          <Link
+            href="/my-learning"
+            className="hidden text-sm font-semibold text-ink-700 transition-colors hover:text-brand-blue lg:inline-flex"
+          >
+            My Learning
+          </Link>
+          <Link
+            href="/login"
+            className="hidden text-sm font-semibold text-ink-700 transition-colors hover:text-brand-blue lg:inline-flex"
+          >
+            Sign In
+          </Link>
           <a
             href={`tel:${site.brand.phoneTel}`}
-            className="text-sm font-semibold text-ink-700 hover:text-brand-blue transition-colors"
+            className="hidden text-sm font-semibold text-ink-700 hover:text-brand-blue transition-colors xl:inline-flex"
           >
             {site.brand.phone}
           </a>
-          <Button href="/#courses" variant="primary" size="md">
+          <Button href="/courses" variant="primary" size="md">
             Enroll
           </Button>
         </div>
@@ -239,13 +252,27 @@ export function Header() {
               </Link>
             ))}
             <div className="mt-2 pt-3 border-t border-ink-100 flex flex-col gap-3">
+              <Link
+                href="/my-learning"
+                onClick={closeMobileMenu}
+                className="px-3 py-2 text-sm font-semibold text-ink-700"
+              >
+                My Learning
+              </Link>
+              <Link
+                href="/login"
+                onClick={closeMobileMenu}
+                className="px-3 py-2 text-sm font-semibold text-ink-700"
+              >
+                Sign In
+              </Link>
               <a
                 href={`tel:${site.brand.phoneTel}`}
                 className="px-3 py-2 text-sm font-semibold text-ink-700"
               >
                 Call {site.brand.phone}
               </a>
-              <Button href="/#courses" variant="primary" size="md" className="w-full">
+              <Button href="/courses" variant="primary" size="md" className="w-full">
                 Enroll
               </Button>
             </div>

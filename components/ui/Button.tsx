@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 
 type Variant = 'primary' | 'secondary' | 'outline' | 'ghost';
-type Size = 'md' | 'lg';
+type Size = 'md' | 'lg' | 'xl';
 
 const variantClasses: Record<Variant, string> = {
   primary: 'bg-brand-blue hover:bg-brand-blue-dark text-white',
@@ -15,6 +15,7 @@ const variantClasses: Record<Variant, string> = {
 const sizeClasses: Record<Size, string> = {
   md: 'px-5 py-2.5 text-sm',
   lg: 'px-7 py-3.5 text-base',
+  xl: 'px-9 py-4 text-lg',
 };
 
 const baseClasses =

@@ -8,10 +8,10 @@ import { site } from '@/content/site';
 type Variant = 'courses' | 'rn-only' | 'rpn-only' | 'psychology-only';
 
 const enrollLinks: Record<Variant, string> = {
-  courses: '/#courses',
-  'rn-only': '/contact?course=rn',
-  'rpn-only': '/contact?course=rpn',
-  'psychology-only': '/contact?course=psychology',
+  courses: '/courses',
+  'rn-only': '/checkout?course=rn',
+  'rpn-only': '/checkout?course=rpn',
+  'psychology-only': '/checkout?course=psychology',
 };
 
 export function FinalCTA({ variant = 'courses' }: { variant?: Variant }) {

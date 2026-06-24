@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Angrej Singh NCLEX',
     description:
-      'Built around one teacher and one plan — live NCLEX coaching for RN and RPN candidates.',
+      'Built around one teacher and one plan - live NCLEX coaching for RN and RPN candidates.',
     url: '/about',
     type: 'website',
   },
@@ -41,14 +41,14 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-gradient-to-br from-brand-blue-soft via-white to-brand-yellow-soft pt-12 pb-16 md:pt-20 md:pb-24">
+      <section className="bg-gradient-to-br from-brand-blue-soft via-white to-brand-yellow-soft pt-10 pb-12 md:pt-14 md:pb-16">
         <Container>
-          <div className="max-w-3xl">
+          <div className="max-w-2xl">
             <Badge tone="blue">About</Badge>
-            <h1 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-ink-900 text-balance">
+            <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-ink-900 text-balance md:text-4xl lg:text-5xl">
               Built around one teacher and one plan.
             </h1>
-            <p className="mt-5 text-base md:text-lg text-ink-700 leading-relaxed">
+            <p className="mt-4 text-base leading-relaxed text-ink-700 md:text-lg">
               Angrej Singh NCLEX exists for one reason: to help RN and RPN
               candidates pass the NCLEX without getting lost in a generic LMS.
               Every live class is taught by the same person, and the support
@@ -58,19 +58,19 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-white py-16 md:py-24">
+      <section className="bg-white py-12 md:py-16">
         <Container>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative rounded-3xl overflow-hidden border border-ink-100 shadow-card">
+          <div className="grid items-start gap-8 md:grid-cols-[0.85fr_1.15fr] lg:gap-12">
+            <div className="relative overflow-hidden rounded-3xl border border-ink-100 shadow-card">
               <Image
                 src="/instructor.jpg"
-                alt="Angrej Singh — NCLEX coach"
+                alt="Angrej Singh - NCLEX coach"
                 width={680}
                 height={680}
-                className="w-full h-auto object-cover aspect-[5/6]"
+                className="aspect-[4/5] w-full object-cover object-top md:aspect-auto md:h-[460px]"
               />
             </div>
-            <div className="space-y-5 text-ink-700 leading-relaxed">
+            <div className="space-y-5 text-base leading-relaxed text-ink-700 md:text-lg">
               <p>
                 Angrej Singh started teaching NCLEX students after years of
                 bedside nursing experience and watching candidates struggle
@@ -85,7 +85,7 @@ export default function AboutPage() {
               </p>
               <p>
                 The program is for RN and RPN candidates in Canada and abroad
-                preparing for the NCLEX-RN or NCLEX-PN exam — international
+                preparing for the NCLEX-RN or NCLEX-PN exam - international
                 nurses, recent graduates, and career changers alike.
               </p>
             </div>
@@ -93,24 +93,24 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-white py-16 md:py-24">
+      <section className="bg-white pt-4 pb-12 md:pt-6 md:pb-16">
         <Container>
           <SectionHeader
             eyebrow="Our values"
             title="What we hold ourselves to."
             align="center"
           />
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
+          <div className="grid gap-4 mt-8 md:grid-cols-3 md:gap-5">
             {values.map(({ icon: Icon, title, body }) => (
               <article
                 key={title}
-                className="bg-white rounded-2xl p-6 md:p-8 shadow-card border border-ink-100"
+                className="bg-white rounded-2xl p-5 md:p-6 shadow-card border border-ink-100"
               >
-                <div className="bg-brand-blue-soft rounded-xl p-3 w-fit mb-5">
-                  <Icon size={28} className="text-brand-blue" aria-hidden="true" />
+                <div className="bg-brand-blue-soft rounded-xl p-2.5 w-fit mb-4">
+                  <Icon size={24} className="text-brand-blue" aria-hidden="true" />
                 </div>
-                <h3 className="text-xl font-bold text-ink-900">{title}</h3>
-                <p className="mt-2 text-ink-700 leading-relaxed">{body}</p>
+                <h3 className="text-lg font-bold text-ink-900">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-700">{body}</p>
               </article>
             ))}
           </div>

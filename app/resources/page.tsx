@@ -3,6 +3,7 @@ import { FileText, Mail } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
+import { pdfResources } from '@/content/resources';
 
 export const metadata: Metadata = {
   title: 'Resources | Angrej Singh NCLEX',
@@ -17,14 +18,6 @@ export const metadata: Metadata = {
     type: 'website',
   },
 };
-
-type PdfResource = {
-  title: string;
-  description: string;
-  href: string;
-};
-
-const pdfResources: PdfResource[] = [];
 
 export default function ResourcesPage() {
   return (

@@ -108,7 +108,7 @@ export function CourseCards() {
 
                   <div className="mt-auto pt-2">
                     <Button
-                      href={`/contact?course=${course.slug}`}
+                      href={`/checkout?course=${course.slug}`}
                       variant="primary"
                       size="md"
                     >
