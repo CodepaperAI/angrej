@@ -41,14 +41,14 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-gradient-to-br from-brand-blue-soft via-white to-brand-yellow-soft pt-10 pb-12 md:pt-14 md:pb-16">
+      <section className="bg-gradient-to-br from-brand-blue-soft via-white to-brand-yellow-soft pt-8 pb-9 md:pt-10 md:pb-12">
         <Container>
-          <div className="max-w-2xl">
+          <div className="min-w-0 max-w-3xl">
             <Badge tone="blue">About</Badge>
-            <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-ink-900 text-balance md:text-4xl lg:text-5xl">
+            <h1 className="mt-3 min-w-0 break-words text-3xl font-extrabold leading-[1.08] tracking-tight text-ink-900 [overflow-wrap:anywhere] md:text-balance md:text-4xl lg:text-5xl">
               Built around one teacher and one plan.
             </h1>
-            <p className="mt-4 text-base leading-relaxed text-ink-700 md:text-lg">
+            <p className="mt-3 min-w-0 break-words text-base leading-relaxed text-ink-700 [overflow-wrap:anywhere] md:text-lg">
               Angrej Singh NCLEX exists for one reason: to help RN and RPN
               candidates pass the NCLEX without getting lost in a generic LMS.
               Every live class is taught by the same person, and the support
@@ -58,19 +58,19 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-white py-12 md:py-16">
+      <section className="bg-white py-9 md:py-11">
         <Container>
-          <div className="grid items-start gap-8 md:grid-cols-[0.85fr_1.15fr] lg:gap-12">
-            <div className="relative overflow-hidden rounded-3xl border border-ink-100 shadow-card">
+          <div className="grid min-w-0 items-start gap-6 md:grid-cols-[0.85fr_1.15fr] lg:gap-8">
+            <div className="relative min-w-0 overflow-hidden rounded-2xl border border-ink-100 shadow-card">
               <Image
                 src="/instructor.jpg"
                 alt="Angrej Singh - NCLEX coach"
                 width={680}
                 height={680}
-                className="aspect-[4/5] w-full object-cover object-top md:aspect-auto md:h-[460px]"
+                className="aspect-[4/5] w-full object-cover object-top md:aspect-auto md:h-[380px] lg:h-[410px]"
               />
             </div>
-            <div className="space-y-5 text-base leading-relaxed text-ink-700 md:text-lg">
+            <div className="min-w-0 space-y-3 break-words text-base leading-relaxed text-ink-700 [overflow-wrap:anywhere] md:pt-1">
               <p>
                 Angrej Singh started teaching NCLEX students after years of
                 bedside nursing experience and watching candidates struggle
@@ -93,24 +93,24 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-white pt-4 pb-12 md:pt-6 md:pb-16">
+      <section className="bg-white pt-0 pb-9 md:pb-12">
         <Container>
           <SectionHeader
             eyebrow="Our values"
             title="What we hold ourselves to."
             align="center"
           />
-          <div className="grid gap-4 mt-8 md:grid-cols-3 md:gap-5">
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
             {values.map(({ icon: Icon, title, body }) => (
               <article
                 key={title}
-                className="bg-white rounded-2xl p-5 md:p-6 shadow-card border border-ink-100"
+                className="rounded-2xl border border-ink-100 bg-white p-4 shadow-card md:p-5"
               >
-                <div className="bg-brand-blue-soft rounded-xl p-2.5 w-fit mb-4">
-                  <Icon size={24} className="text-brand-blue" aria-hidden="true" />
+                <div className="mb-3 w-fit rounded-xl bg-brand-blue-soft p-2.5">
+                  <Icon size={22} className="text-brand-blue" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-bold text-ink-900">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-700">{body}</p>
+                <h3 className="text-base font-bold text-ink-900">{title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-ink-700">{body}</p>
               </article>
             ))}
           </div>

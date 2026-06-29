@@ -24,6 +24,21 @@ export const site = {
       "I don't teach to finish a syllabus. I teach until students understand.",
     quoteAttribution: 'Angrej Singh',
   },
+  institute: {
+    badge: 'Complete nursing support',
+    title: 'Your Complete Nursing Learning Institute.',
+    body: [
+      'Every nursing student has felt it at some point - leaving class with questions, struggling to understand difficult topics, or wishing someone explained things in a simpler way.',
+      "That's why Angrej Singh Learning Hub exists.",
+      'Our goal is to make nursing easier to understand, easier to remember, and easier to apply in real clinical practice. From nursing subjects and clinical concepts to NCLEX preparation, every lesson is taught in a simple, practical, and student-friendly way.',
+      "Whether you're trying to score better in college, build stronger clinical knowledge, or prepare for the NCLEX, we're here to help you learn with confidence - every step of the way.",
+    ],
+    video: {
+      src: '/videos/front-page-video.mp4',
+      poster: '/videos/front-page-video-poster.jpg',
+      label: 'Angrej Singh Learning Hub front page introduction video',
+    },
+  },
   pricing: {
     amount: 1200,
     currency: 'USD',

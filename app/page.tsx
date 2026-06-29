@@ -1,4 +1,5 @@
 import { Hero } from '@/components/sections/Hero';
+import { InstituteVideo } from '@/components/sections/InstituteVideo';
 import { BannerCarousel } from '@/components/sections/BannerCarousel';
 import { CourseCards } from '@/components/sections/CourseCards';
 import { Testimonials } from '@/components/sections/Testimonials';
@@ -12,6 +13,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <InstituteVideo />
       <BannerCarousel />
       <PromiseSection />
       <CourseCards />

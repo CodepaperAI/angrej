@@ -66,7 +66,7 @@ export function Header() {
 
   return (
     <header className="sticky top-9 z-40 bg-white border-b border-ink-100">
-      <div className="max-w-6xl mx-auto px-4 md:px-6 flex items-center justify-between h-16 md:h-18 gap-4">
+      <div className="mx-auto flex h-16 w-full max-w-6xl min-w-0 items-center justify-between gap-4 px-4 md:h-18 md:px-6">
         <Link href="/" className="flex items-center gap-3 shrink-0" aria-label={site.brand.name}>
           <Image
             src="/logo.png"
@@ -187,7 +187,7 @@ export function Header() {
 
       {open && (
         <div className="lg:hidden border-t border-ink-100 bg-white">
-          <nav className="max-w-6xl mx-auto px-4 md:px-6 py-4 flex flex-col gap-1" aria-label="Mobile">
+          <nav className="mx-auto flex w-full max-w-6xl min-w-0 flex-col gap-1 px-4 py-4 md:px-6" aria-label="Mobile">
             <Link
               href="/"
               onClick={closeMobileMenu}

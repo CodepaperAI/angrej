@@ -13,22 +13,34 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 
 export function BannerCarousel() {
   const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
   const [paused, setPaused] = useState(false);
   const reduceMotion = useReducedMotion();
   const count = banners.length;
 
   const goTo = useCallback(
-    (next: number) => setIndex((next + count) % count),
-    [count],
+    (next: number) => {
+      setDirection(next >= index ? 1 : -1);
+      setIndex((next + count) % count);
+    },
+    [count, index],
   );
+
+  const goNext = useCallback(() => {
+    setDirection(1);
+    setIndex((current) => (current + 1) % count);
+  }, [count]);
+
+  const goPrevious = useCallback(() => {
+    setDirection(-1);
+    setIndex((current) => (current - 1 + count) % count);
+  }, [count]);
 
   useEffect(() => {
     if (reduceMotion || paused || count <= 1) return;
-    const id = window.setInterval(() => {
-      setIndex((current) => (current + 1) % count);
-    }, AUTOPLAY_MS);
+    const id = window.setInterval(goNext, AUTOPLAY_MS);
     return () => window.clearInterval(id);
-  }, [reduceMotion, paused, count]);
+  }, [reduceMotion, paused, count, goNext]);
 
   if (count === 0) return null;
 
@@ -41,16 +53,25 @@ export function BannerCarousel() {
           className="relative"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
+          onFocusCapture={() => setPaused(true)}
+          onBlurCapture={() => setPaused(false)}
         >
           <div className="relative aspect-[1920/700] overflow-hidden rounded-3xl border border-ink-100 bg-brand-blue-soft shadow-card">
-            <AnimatePresence initial={false}>
+            <AnimatePresence initial={false} custom={direction}>
               <motion.div
                 key={index}
                 className="absolute inset-0"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: reduceMotion ? 0 : 0.6, ease: EASE }}
+                custom={direction}
+                initial={{
+                  x: reduceMotion ? 0 : `${direction * 100}%`,
+                  opacity: reduceMotion ? 1 : 0.88,
+                }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{
+                  x: reduceMotion ? 0 : `${direction * -100}%`,
+                  opacity: reduceMotion ? 1 : 0.88,
+                }}
+                transition={{ duration: reduceMotion ? 0 : 0.65, ease: EASE }}
               >
                 <BannerSlide banner={active} priority={index === 0} />
               </motion.div>
@@ -61,7 +82,7 @@ export function BannerCarousel() {
             <>
               <button
                 type="button"
-                onClick={() => goTo(index - 1)}
+                onClick={goPrevious}
                 aria-label="Previous banner"
                 className="absolute left-3 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-ink-100 bg-white/90 text-ink-700 shadow-card backdrop-blur transition hover:bg-white hover:text-brand-blue sm:flex"
               >
@@ -69,7 +90,7 @@ export function BannerCarousel() {
               </button>
               <button
                 type="button"
-                onClick={() => goTo(index + 1)}
+                onClick={goNext}
                 aria-label="Next banner"
                 className="absolute right-3 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-ink-100 bg-white/90 text-ink-700 shadow-card backdrop-blur transition hover:bg-white hover:text-brand-blue sm:flex"
               >
