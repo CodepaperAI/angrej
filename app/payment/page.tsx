@@ -3,6 +3,7 @@ import { CreditCard, LockKeyhole, ShieldCheck } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
+import { PaymentCompleteButton } from '@/components/lms/PaymentCompleteButton';
 import { courses, type CourseSlug } from '@/content/courses';
 import { paymentPortal } from '@/content/lms';
 
@@ -56,7 +57,7 @@ export default async function PaymentPage({ searchParams }: PaymentPageProps) {
                     Payment details
                   </h2>
                   <p className="text-sm text-ink-500">
-                    Client preview only. No payment will be charged.
+                    Secure checkout preview for the selected course.
                   </p>
                 </div>
               </div>
@@ -139,14 +140,7 @@ export default async function PaymentPage({ searchParams }: PaymentPageProps) {
                 </div>
               </div>
 
-              <Button
-                href={`/enrollment-success?course=${course.slug}`}
-                variant="primary"
-                size="lg"
-                className="mt-7 w-full"
-              >
-                Complete Enrollment Preview
-              </Button>
+              <PaymentCompleteButton courseSlug={course.slug} />
 
               <Button
                 href={`/checkout?course=${course.slug}`}

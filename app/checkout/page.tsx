@@ -50,8 +50,8 @@ export default async function CheckoutPage({ searchParams }: CheckoutPageProps) 
             </h1>
             <p className="mt-4 text-base leading-relaxed text-ink-700 md:text-lg">
               Confirm the course details, then continue to sign in or create an
-              account. Payment and student access can be connected when the LMS
-              backend is ready.
+              account. After payment, the selected course opens inside My
+              Learning.
             </p>
           </div>
 

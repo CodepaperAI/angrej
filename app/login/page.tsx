@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { AuthPreviewForm } from '@/components/lms/AuthPreviewForm';
 import { courses, type CourseSlug } from '@/content/courses';
 
 type LoginPageProps = {
@@ -20,6 +19,48 @@ function getSelectedCourseSlug(course?: string): CourseSlug {
   return courseSlugs.includes(course as CourseSlug)
     ? (course as CourseSlug)
     : 'rn';
+}
+
+function TextField({
+  label,
+  type = 'text',
+  autoComplete,
+}: {
+  label: string;
+  type?: string;
+  autoComplete?: string;
+}) {
+  return (
+    <label className="block">
+      <span className="mb-2 block text-sm font-semibold text-ink-900">
+        {label} *
+      </span>
+      <input
+        type={type}
+        autoComplete={autoComplete}
+        required
+        className="w-full rounded-lg border border-ink-100 bg-white px-4 py-3 text-ink-900 focus:border-brand-blue focus:outline-none"
+      />
+    </label>
+  );
+}
+
+function ContinueToPaymentLink({
+  courseSlug,
+  children,
+}: {
+  courseSlug: CourseSlug;
+  children: string;
+}) {
+  return (
+    <a
+      href={`/payment?course=${courseSlug}`}
+      data-flow-action="continue-to-payment"
+      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-blue px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-brand-blue-dark"
+    >
+      {children}
+    </a>
+  );
 }
 
 export default async function LoginPage({ searchParams }: LoginPageProps) {
@@ -63,7 +104,31 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
             </Link>
           </p>
 
-          <AuthPreviewForm mode="login" courseSlug={courseSlug} />
+          <div className="mt-7 space-y-5">
+            <TextField label="Email" type="email" autoComplete="email" />
+            <TextField
+              label="Password"
+              type="password"
+              autoComplete="current-password"
+            />
+
+            <div className="flex items-center justify-between gap-3 text-sm">
+              <label className="inline-flex items-center gap-2 font-semibold text-ink-700">
+                <input type="checkbox" className="h-4 w-4 rounded border-ink-100" />
+                Remember me
+              </label>
+              <a
+                href="/forgot-password"
+                className="font-bold text-brand-blue hover:underline"
+              >
+                Forgot Password?
+              </a>
+            </div>
+
+            <ContinueToPaymentLink courseSlug={courseSlug}>
+              Sign In
+            </ContinueToPaymentLink>
+          </div>
         </div>
       </div>
     </section>

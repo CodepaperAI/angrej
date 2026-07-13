@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { CheckCircle2 } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
-import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { courses, type CourseSlug } from '@/content/courses';
 import { enrollmentSuccess } from '@/content/lms';
@@ -72,16 +71,18 @@ export default async function EnrollmentSuccessPage({
           </div>
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Button
-              href={`/my-learning?course=${course.slug}`}
-              variant="primary"
-              size="lg"
+            <a
+              href={`/my-learning?course=${course.slug}#course-room`}
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-blue px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-brand-blue-dark"
             >
-              Open My Learning
-            </Button>
-            <Button href={`/${course.slug}`} variant="outline" size="lg">
-              View Course
-            </Button>
+              Start Learning
+            </a>
+            <a
+              href="/my-learning"
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-brand-blue bg-white px-7 py-3.5 text-base font-semibold text-brand-blue transition-colors hover:bg-brand-blue-soft"
+            >
+              Open Dashboard
+            </a>
           </div>
         </div>
       </Container>

@@ -48,12 +48,12 @@ export const checkoutSteps = [
   {
     icon: 'credit-card',
     title: 'Confirm payment',
-    body: 'Payment can be connected to Stripe when ready.',
+    body: 'Complete the payment step and unlock the selected course.',
   },
   {
     icon: 'lock',
     title: 'Open My Learning',
-    body: 'Your enrolled courses appear in the learning area.',
+    body: 'Your paid course appears in the learning area with class access.',
   },
 ] as const satisfies {
   icon: LmsIconKey;
@@ -62,12 +62,12 @@ export const checkoutSteps = [
 }[];
 
 export const paymentPortal = {
-  eyebrow: 'Payment portal preview',
-  title: 'Complete your enrollment preview.',
+  eyebrow: 'Payment portal',
+  title: 'Complete your course payment.',
   description:
-    'This page shows how the payment step will look for students. No real payment is processed in this client preview.',
+    'Review the selected course, enter student billing details, and continue into My Learning after payment.',
   notice:
-    'When backend and Stripe are connected, this button can open the secure Stripe Checkout page and unlock the selected course after successful payment.',
+    'Client preview: Complete Payment simulates a successful payment and unlocks the selected course in My Learning. When Stripe is connected, this same step can confirm the real payment before course access opens.',
   fields: [
     'Student name',
     'Email address',
@@ -78,10 +78,10 @@ export const paymentPortal = {
 } as const;
 
 export const enrollmentSuccess = {
-  eyebrow: 'Enrollment complete',
-  title: 'Your course is ready in My Learning.',
+  eyebrow: 'Payment confirmed',
+  title: 'Your course is unlocked.',
   description:
-    'This success page confirms the student journey after checkout. In the live LMS, this is where payment confirmation would unlock the course.',
+    'Your selected course has been added to My Learning. Start from the course room, access materials, and return anytime from the dashboard.',
   nextSteps: [
     'Open your student dashboard',
     'Start the selected course',
@@ -93,7 +93,7 @@ export const learningDashboard = {
   eyebrow: 'My Learning',
   title: 'Your learning dashboard.',
   description:
-    'This front-end dashboard shows how enrolled courses, progress, recordings, and next steps will feel once account access is connected.',
+    'Your enrolled courses, progress, recordings, and next steps stay together after payment.',
   courses: [
     {
       courseSlug: 'rn',
