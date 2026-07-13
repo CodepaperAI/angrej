@@ -81,7 +81,7 @@ export function LearningDashboard({
           courseSlug: slug,
           status: 'Enrollment complete',
           progressPercent: fallback?.progressPercent ?? 0,
-          actionLabel: fallback?.progressPercent ? 'Continue' : 'Open Course',
+          actionLabel: fallback?.progressPercent ? 'Continue' : 'Start Learning',
           actionHref: `/my-learning?course=${slug}#course-room`,
           isUnlocked: true,
         };
@@ -275,12 +275,9 @@ export function LearningDashboard({
                     </div>
                   ))}
                 </div>
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <Button href="/resources" variant="primary" size="md">
-                    Open Resources
-                  </Button>
-                  <Button href={`/${activeCourse.slug}`} variant="outline" size="md">
-                    View Course Details
+                <div className="mt-6 flex">
+                  <Button href={`/${activeCourse.slug}`} variant="primary" size="md">
+                    Start Learning
                   </Button>
                 </div>
               </div>
