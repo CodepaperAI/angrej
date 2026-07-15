@@ -13,9 +13,9 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <InstituteVideo />
       <BannerCarousel />
       <PromiseSection />
+      <InstituteVideo />
       <CourseCards />
       <WhyStudentsChooseUs />
       <Instructor />
